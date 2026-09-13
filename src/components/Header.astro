@@ -1,0 +1,251 @@
+---
+// src/components/Header.astro
+const treatmentCategories = [
+  {
+    title: 'Medicina Estetica Viso',
+    items: [
+      { name: 'Filler Acido Ialuronico', href: '/trattamenti/viso#filler' },
+      { name: 'Botox / Botulino', href: '/trattamenti/viso#botox' },
+      { name: 'Biostimolazione & Polinucleotidi', href: '/trattamenti/viso#biostimolazione' },
+      { name: 'Rinofiller (Rinoplastica Non Chirurgica)', href: '/trattamenti/viso#rinofiller' },
+      { name: 'Peeling Medico Avanzato', href: '/trattamenti/viso#peeling' },
+    ]
+  },
+  {
+    title: 'Rimozione Inestetismi & Laser',
+    items: [
+      { name: 'Laser CO2 Frazionato (Resurfacing)', href: '/trattamenti/laser#co2' },
+      { name: 'Epilazione Medicale Definitiva', href: '/trattamenti/laser#epilazione' },
+      { name: 'Rimozione Macchie & Pigmentazioni', href: '/trattamenti/laser#macchie' },
+      { name: 'Trattamento Cicatrici Acneiche', href: '/trattamenti/laser#acne' },
+    ]
+  },
+  {
+    title: 'Corpo & Body Contouring',
+    items: [
+      { name: 'Mesoterapia Anti-Cellulite', href: '/trattamenti/corpo#mesoterapia' },
+      { name: 'Radiofrequenza Medicale Corpo', href: '/trattamenti/corpo#radiofrequenza' },
+      { name: 'Adipocitoclasia / Adipe Localizzato', href: '/trattamenti/corpo#adipe' },
+      { name: 'Tonificazione Muscolare Intensa', href: '/trattamenti/corpo#tonificazione' },
+    ]
+  },
+  {
+    title: 'Chirurgia & Rigenerativa',
+    items: [
+      { name: 'Medicina Rigenerativa (PRP)', href: '/trattamenti/viso#rigenerativa' },
+      { name: 'Consulenza Chirurgia Plastica', href: '/contatti' },
+      { name: 'Check-up Cutaneo Diagnostico', href: '/contatti' },
+    ]
+  }
+];
+---
+
+<header id="site-header" class="fixed top-0 left-0 right-0 z-40 transition-all duration-300 bg-transparent text-white border-b border-white/10">
+  <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+    
+    <!-- Logo Brand -->
+    <a href="/" class="flex flex-col group">
+      <span id="logo-title" class="text-xl md:text-2xl font-black tracking-tighter text-white group-hover:opacity-80 transition-colors uppercase">
+        OG MEDICA
+      </span>
+      <span id="logo-subtitle" class="text-[9px] font-semibold tracking-widest uppercase text-neutral-300 -mt-1">
+        Medicina Estetica Avanzata
+      </span>
+    </a>
+
+    <!-- Navigation Desktop -->
+    <nav class="hidden lg:flex items-center space-x-8 text-xs font-semibold uppercase tracking-widest">
+
+      <!-- MEGA MENU DROPDOWN "TRATTAMENTI" -->
+      <div class="relative group py-7">
+        <a href="/trattamenti" class="nav-item flex items-center gap-1 hover:opacity-75 transition-opacity focus:outline-none uppercase tracking-widest font-semibold text-white">
+          Trattamenti
+          <svg class="w-3.5 h-3.5 text-neutral-300 group-hover:rotate-180 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+          </svg>
+        </a>
+
+        <!-- Dropdown Panel (Harley Street Style Mega Menu) -->
+        <div class="absolute left-1/2 -translate-x-1/2 top-full w-screen max-w-6xl bg-white border border-neutral-100 shadow-xl rounded-2xl p-8 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 grid grid-cols-4 gap-8 pointer-events-none group-hover:pointer-events-auto text-[#111111]">
+          
+          {treatmentCategories.map((cat) => (
+            <div>
+              <h5 class="text-[11px] font-bold text-[#111111] uppercase tracking-wider mb-4 border-b border-neutral-100 pb-2">
+                {cat.title}
+              </h5>
+              <ul class="space-y-2.5">
+                {cat.items.map((item) => (
+                  <li>
+                    <a 
+                      href={item.href} 
+                      class="text-[11px] font-normal text-neutral-500 hover:text-[#111111] hover:translate-x-1 transition-all inline-block capitalize"
+                    >
+                      {item.name}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+
+          <div class="col-span-4 bg-neutral-50 p-4 rounded-xl flex items-center justify-between mt-2 border border-neutral-100">
+            <span class="text-xs text-neutral-600 font-light lowercase">Non sai qual è il trattamento più adatto al tuo inestetismo?</span>
+            <a href="/trattamenti" class="text-xs font-bold text-[#111111] uppercase tracking-wider hover:underline">Vedi l'Hub Completo dei Trattamenti &rarr;</a>
+          </div>
+
+        </div>
+      </div>
+
+      <a href="/team" class="nav-item hover:opacity-75 transition-opacity py-2 text-white">Il Team</a>
+      <a href="/sedi" class="nav-item hover:opacity-75 transition-opacity py-2 text-white">Sedi</a>
+      <a href="/contatti" class="nav-item hover:opacity-75 transition-opacity py-2 text-white">Contatti</a>
+    </nav>
+
+    <!-- Right Header CTA Button -->
+    <div class="hidden sm:flex items-center space-x-4">
+      <a 
+        href="https://wa.me/393407699438?text=Buongiorno,%20desidero%20prenotare%20una%20consulenza." 
+        target="_blank"
+        rel="noopener noreferrer"
+        id="cta-btn"
+        class="bg-white text-[#111111] text-[11px] font-semibold uppercase tracking-widest px-6 py-3 rounded-full hover:bg-neutral-200 transition-all shadow-sm"
+      >
+        Prenota una consulenza
+      </a>
+    </div>
+
+    <!-- Mobile Menu Toggle Button -->
+    <button id="mobile-menu-btn" class="lg:hidden p-2 text-white focus:outline-none" aria-label="Apri Menu">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    </button>
+  </div>
+</header>
+
+<!-- MOBILE DRAWER / OVERLAY (Posizionato fuori dal tag <header> con z-[999] per evitare che venga coperto) -->
+<div id="mobile-menu" class="fixed inset-0 bg-neutral-950/70 backdrop-blur-md z-[999] hidden opacity-0 transition-opacity duration-300 text-[#111111]">
+  <div class="fixed right-0 top-0 bottom-0 w-full max-w-xs bg-white p-6 overflow-y-auto flex flex-col justify-between shadow-2xl">
+    <div>
+      <div class="flex items-center justify-between pb-6 border-b border-neutral-100">
+        <span class="text-lg font-extrabold uppercase tracking-tight text-[#111111]">Menu</span>
+        <button id="close-menu-btn" class="p-2 text-neutral-500 hover:text-black focus:outline-none">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+
+      <nav class="mt-6 space-y-4 text-xs font-semibold uppercase tracking-widest">
+        <div>
+          <a href="/trattamenti" class="block py-2 text-[#111111] font-bold border-b border-neutral-50">Tutti i Trattamenti (Hub)</a>
+          <div class="pl-3 py-2 space-y-3 font-normal capitalize text-neutral-600">
+            <a href="/trattamenti/viso" class="block">Medicina Estetica Viso</a>
+            <a href="/trattamenti/laser" class="block">Laser & Resurfacing</a>
+            <a href="/trattamenti/corpo" class="block">Body Contouring & Corpo</a>
+          </div>
+        </div>
+
+        <a href="/team" class="block py-2 text-[#111111] border-b border-neutral-50">Il Team</a>
+        <a href="/sedi" class="block py-2 text-[#111111] border-b border-neutral-50">Sedi</a>
+        <a href="/contatti" class="block py-2 text-[#111111] border-b border-neutral-50">Contatti</a>
+      </nav>
+    </div>
+
+    <div class="pt-6 border-t border-neutral-100">
+      <a 
+        href="https://wa.me/393407699438?text=Buongiorno,%20desidero%20prenotare%20una%20consulenza." 
+        target="_blank"
+        rel="noopener noreferrer"
+        class="block text-center w-full bg-[#111111] text-white text-xs font-semibold uppercase tracking-widest py-3.5 rounded-full"
+      >
+        Prenota una consulenza
+      </a>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Gestione Header Sticky + Cambio Stile allo Scroll
+  const header = document.getElementById('site-header');
+  const logoTitle = document.getElementById('logo-title');
+  const logoSubtitle = document.getElementById('logo-subtitle');
+  const navItems = document.querySelectorAll('.nav-item');
+  const ctaBtn = document.getElementById('cta-btn');
+  const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+
+  const updateHeader = () => {
+    if (window.scrollY > 40) {
+      header?.classList.remove('bg-transparent', 'text-white', 'border-white/10');
+      header?.classList.add('bg-white/95', 'backdrop-blur-md', 'shadow-sm', 'border-neutral-100', 'text-[#111111]');
+      
+      logoTitle?.classList.remove('text-white');
+      logoTitle?.classList.add('text-[#111111]');
+
+      logoSubtitle?.classList.remove('text-neutral-300');
+      logoSubtitle?.classList.add('text-neutral-400');
+
+      navItems.forEach(item => {
+        item.classList.remove('text-white');
+        item.classList.add('text-[#111111]');
+      });
+
+      ctaBtn?.classList.remove('bg-white', 'text-[#111111]', 'hover:bg-neutral-200');
+      ctaBtn?.classList.add('bg-[#111111]', 'text-white', 'hover:bg-neutral-800');
+
+      mobileMenuBtn?.classList.remove('text-white');
+      mobileMenuBtn?.classList.add('text-[#111111]');
+    } else {
+      header?.classList.add('bg-transparent', 'text-white', 'border-white/10');
+      header?.classList.remove('bg-white/95', 'backdrop-blur-md', 'shadow-sm', 'border-neutral-100', 'text-[#111111]');
+
+      logoTitle?.classList.add('text-white');
+      logoTitle?.classList.remove('text-[#111111]');
+
+      logoSubtitle?.classList.add('text-neutral-300');
+      logoSubtitle?.classList.remove('text-neutral-400');
+
+      navItems.forEach(item => {
+        item.classList.add('text-white');
+        item.classList.remove('text-[#111111]');
+      });
+
+      ctaBtn?.classList.add('bg-white', 'text-[#111111]', 'hover:bg-neutral-200');
+      ctaBtn?.classList.remove('bg-[#111111]', 'text-white', 'hover:bg-neutral-800');
+
+      mobileMenuBtn?.classList.add('text-white');
+      mobileMenuBtn?.classList.remove('text-[#111111]');
+    }
+  };
+
+  window.addEventListener('scroll', updateHeader);
+  updateHeader();
+
+  // Gestione Apertura/Chiusura Drawer Mobile
+  const menuBtn = document.getElementById('mobile-menu-btn');
+  const closeBtn = document.getElementById('close-menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  const openMenu = () => {
+    if (mobileMenu) {
+      mobileMenu.classList.remove('hidden');
+      document.body.style.overflow = 'hidden'; // Blocco dello scroll dello sfondo quando il menu è aperto
+      setTimeout(() => {
+        mobileMenu.classList.remove('opacity-0');
+      }, 10);
+    }
+  };
+
+  const closeMenu = () => {
+    if (mobileMenu) {
+      mobileMenu.classList.add('opacity-0');
+      document.body.style.overflow = ''; // Ripristino dello scroll
+      setTimeout(() => {
+        mobileMenu.classList.add('hidden');
+      }, 300);
+    }
+  };
+
+  menuBtn?.addEventListener('click', openMenu);
+  closeBtn?.addEventListener('click', closeMenu);
+</script>

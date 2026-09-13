@@ -1,0 +1,60 @@
+---
+// src/pages/sedi.astro
+import Layout from '../layouts/Layout.astro';
+
+const sedi = [
+  {
+    citta: 'Milano Central',
+    indirizzo: 'Via Montenapoleone 18, 20121 Milano',
+    telefono: '+39 02 8000 1111',
+    orari: 'Lun - Ven: 09:00 - 19:30 | Sab: 09:00 - 13:00',
+    email: 'milano@ogmedica.it'
+  },
+  {
+    citta: 'Roma Parioli',
+    indirizzo: 'Via Bruno Buozzi 42, 00197 Roma',
+    telefono: '+39 06 8000 2222',
+    orari: 'Lun - Ven: 09:30 - 19:00',
+    email: 'roma@ogmedica.it'
+  }
+];
+---
+
+<Layout title="Le Nostre Sedi" description="Scopri le cliniche OG Medica a Milano e Roma. Strutture mediche all'avanguardia con i migliori protocolli.">
+  <section class="py-16 px-6 max-w-7xl mx-auto">
+    <div class="max-w-3xl mb-12">
+      <span class="text-xs font-semibold tracking-widest uppercase text-neutral-400">Presenza Sulla Mappa</span>
+      <h1 class="text-4xl md:text-5xl font-extrabold text-[#111111] mt-2">Le Nostre Cliniche</h1>
+      <p class="text-neutral-600 font-light mt-4 leading-relaxed text-base">
+        Ambienti progettati per garantire riservatezza, massima igiene sanitaria e il massimo comfort durante ogni trattamento.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      {sedi.map((sede) => (
+        <div class="bg-white p-8 rounded-3xl border border-neutral-200/80 hover:border-neutral-400 transition-all shadow-sm">
+          <span class="text-[10px] font-bold tracking-widest uppercase text-neutral-400">Clinica Medica</span>
+          <h2 class="text-2xl font-bold text-[#111111] mt-2">{sede.citta}</h2>
+          
+          <div class="mt-6 space-y-3 text-sm text-neutral-600 font-light">
+            <p><strong class="font-medium text-[#111111]">Indirizzo:</strong> {sede.indirizzo}</p>
+            <p><strong class="font-medium text-[#111111]">Telefono:</strong> {sede.telefono}</p>
+            <p><strong class="font-medium text-[#111111]">Email:</strong> {sede.email}</p>
+            <p><strong class="font-medium text-[#111111]">Orari:</strong> {sede.orari}</p>
+          </div>
+
+          <div class="mt-8 pt-6 border-t border-neutral-100 flex flex-col sm:flex-row gap-3">
+            <a 
+              href={`https://wa.me/393000000000?text=Buongiorno,%20vorrei%20informazioni%20sulla%20sede%20di%20${encodeURIComponent(sede.citta)}.`}
+              target="_blank" 
+              rel="noopener noreferrer"
+              class="bg-[#111111] text-white text-center text-xs font-semibold uppercase tracking-wider px-5 py-3 rounded-full hover:bg-neutral-800 transition-all"
+            >
+              Prenota in questa sede
+            </a>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+</Layout>

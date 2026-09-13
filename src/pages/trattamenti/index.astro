@@ -1,0 +1,137 @@
+---
+// src/pages/trattamenti/index.astro
+import Layout from '../../layouts/Layout.astro';
+
+const categorie = [
+  {
+    id: 'viso',
+    titolo: 'Medicina Estetica Viso',
+    descrizione: 'Protocolli di valorizzazione dei tratti, ripristino dei volumi ed idratazione profonda.',
+    trattamenti: [
+      { nome: 'Filler Acido Ialuronico', desc: 'Rimodellamento labbra, zigomi, mento e ridefinizione dell’ovale.', link: '/trattamenti/viso#filler' },
+      { nome: 'Tossina Botulinica (Botox)', desc: 'Distensione delle rughe d’espressione del terzo superiore del volto.', link: '/trattamenti/viso#botox' },
+      { nome: 'Biostimolazione & Polinucleotidi', desc: 'Rigenerazione cellulare e idratazione profonda dei tessuti cutanei.', link: '/trattamenti/viso#biostimolazione' },
+      { nome: 'Rinofiller', desc: 'Correzione non chirurgica del profilo e del dorso nasale.', link: '/trattamenti/viso#rinofiller' },
+    ]
+  },
+  {
+    id: 'laser',
+    titolo: 'Tecnologia Laser & Resurfacing',
+    descrizione: 'Tecnologie avanzate per il rinnovamento cutaneo e l’eliminazione di inestetismi.',
+    trattamenti: [
+      { nome: 'Laser CO2 Frazionato', desc: 'Rigenerazione profonda del derma, rughe sottili e texture.', link: '/trattamenti/laser#co2' },
+      { nome: 'Trattamento Macchie & Iperpigmentazioni', desc: 'Omogeneizzazione del colorito cutaneo e macchie solari/senili.', link: '/trattamenti/laser#macchie' },
+      { nome: 'Rimozione Cicatrici & Esiti Acneici', desc: 'Levigatura dei tessuti e stimolazione del collagene di riparazione.', link: '/trattamenti/laser#cicatrici' },
+      { nome: 'Epilazione Medicale Definitiva', desc: 'Progressiva eliminazione dei peli piliferi con tecnologia laser medica.', link: '/trattamenti/laser#epilazione' },
+    ]
+  },
+  {
+    id: 'corpo',
+    titolo: 'Corpo & Body Contouring',
+    descrizione: 'Trattamenti mirati per adipe localizzato, lassità cutanea e microcircolo.',
+    trattamenti: [
+      { nome: 'Mesoterapia Anti-Cellulite', desc: 'Drenaggio dei liquidi in eccesso e miglioramento della microcircolazione.', link: '/trattamenti/corpo#mesoterapia' },
+      { nome: 'Radiofrequenza Medicale Corpo', desc: 'Ricompattamento dei tessuti e contrasto alla lassità cutanea.', link: '/trattamenti/corpo#radiofrequenza' },
+      { nome: 'Adipocitoclasia / Adipe Localizzato', desc: 'Riduzione dei depositi adiposi localizzati su addome, fianchi e cosce.', link: '/trattamenti/corpo#adipe' },
+    ]
+  }
+];
+---
+
+<Layout title="Tutti i Trattamenti" description="Esplora la gamma completa dei trattamenti di medicina estetica, laser e rigenerativa di OG Medica a Catania e Milano.">
+  
+  <!-- HERO TRATTAMENTI -->
+  <section class="bg-neutral-50 py-16 md:py-24 px-6 border-b border-neutral-100">
+    <div class="max-w-7xl mx-auto">
+      <span class="text-xs font-semibold tracking-widest uppercase text-neutral-400 block">Catalogo Clinico Integrato</span>
+      <h1 class="text-4xl sm:text-5xl font-extrabold text-[#111111] mt-3">
+        Tutti i Trattamenti Medici
+      </h1>
+      <p class="text-neutral-600 font-light mt-4 text-base sm:text-lg max-w-2xl leading-relaxed">
+        Trova il percorso medico più adatto alle tue esigenze. Ogni trattamento viene personalizzato a seguito di una visita specialistica preliminare.
+      </p>
+
+      <!-- Quick Jump Links -->
+      <div class="mt-8 flex flex-wrap gap-3">
+        <a href="#viso" class="bg-white px-5 py-2.5 rounded-full text-xs font-semibold uppercase tracking-wider text-[#111111] border border-neutral-200 hover:border-black transition-all">
+          Area Viso ↓
+        </a>
+        <a href="#laser" class="bg-white px-5 py-2.5 rounded-full text-xs font-semibold uppercase tracking-wider text-[#111111] border border-neutral-200 hover:border-black transition-all">
+          Tecnologia Laser ↓
+        </a>
+        <a href="#corpo" class="bg-white px-5 py-2.5 rounded-full text-xs font-semibold uppercase tracking-wider text-[#111111] border border-neutral-200 hover:border-black transition-all">
+          Corpo & Silhouette ↓
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- LISTA CATEGORIE E TRATTAMENTI -->
+  <section class="py-20 px-6 max-w-7xl mx-auto space-y-24">
+    {categorie.map((cat) => (
+      <div id={cat.id} class="scroll-mt-28">
+        <div class="mb-10 border-b border-neutral-200/80 pb-6">
+          <span class="text-xs font-bold tracking-widest uppercase text-neutral-400">Ambito Medico</span>
+          <h2 class="text-3xl font-bold text-[#111111] mt-1">{cat.titolo}</h2>
+          <p class="text-neutral-500 font-light text-sm mt-2">{cat.descrizione}</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {cat.trattamenti.map((t) => (
+            <div class="bg-white p-8 rounded-3xl border border-neutral-200/80 hover:border-neutral-400 transition-all shadow-sm flex flex-col justify-between">
+              <div>
+                <h3 class="text-xl font-bold text-[#111111]">{t.nome}</h3>
+                <p class="text-xs text-neutral-600 font-light mt-3 leading-relaxed">
+                  {t.desc}
+                </p>
+              </div>
+              <div class="mt-8 pt-4 border-t border-neutral-100 flex items-center justify-between">
+                <a href={t.link} class="text-xs font-semibold uppercase tracking-wider text-[#111111] hover:underline">
+                  Dettagli Scheda &rarr;
+                </a>
+                <a 
+                  href={`https://wa.me/393407699438?text=Buongiorno,%20vorrei%20informazioni%20sul%20trattamento:%20${encodeURIComponent(t.nome)}.`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-[10px] font-bold uppercase tracking-wider bg-neutral-100 px-3 py-1.5 rounded-full hover:bg-black hover:text-white transition-all"
+                >
+                  Chiedi info
+                </a>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    ))}
+  </section>
+
+  <!-- BANNER GUIDA ALLA SCELTA / CONSULTAZIONE -->
+  <section class="py-16 px-6 max-w-7xl mx-auto mb-16">
+    <div class="bg-neutral-900 text-white p-10 md:p-14 rounded-3xl grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+      <div class="lg:col-span-8">
+        <span class="text-xs font-semibold tracking-widest uppercase text-neutral-400 block">Hai dubbi o desideri un parere medico?</span>
+        <h3 class="text-2xl sm:text-3xl font-bold mt-2">Non sai da quale trattamento iniziare?</h3>
+        <p class="text-neutral-400 font-light text-xs sm:text-sm mt-3 leading-relaxed max-w-xl">
+          Durante la prima visita di valutazione, i nostri medici analizzeranno lo stato dei tessuti e definiranno insieme a te il protocollo ideale per raggiungere il miglior risultato naturale.
+        </p>
+      </div>
+      <div class="lg:col-span-4 flex flex-col gap-3">
+        <a 
+          href="https://wa.me/393407699438?text=Buongiorno,%20vorrei%20prenotare%20una%20prima%20visita%20diagnostica." 
+          target="_blank" 
+          rel="noopener noreferrer"
+          class="bg-white text-[#111111] text-center text-xs font-semibold uppercase tracking-widest py-4 rounded-full hover:bg-neutral-200 transition-all shadow-md"
+        >
+          Prenota Prima Visita
+        </a>
+        <a 
+          href="/contatti" 
+          class="bg-neutral-800 text-white text-center text-xs font-semibold uppercase tracking-widest py-3.5 rounded-full hover:bg-neutral-700 transition-all border border-neutral-700"
+        >
+          Invia una richiesta
+        </a>
+      </div>
+    </div>
+  </section>
+
+</Layout>

@@ -1,0 +1,297 @@
+---
+// src/pages/index.astro
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Home" description="Clinica di Medicina Estetica Avanzata a Catania e Milano - Protocolli medici su misura e risultati naturali.">
+  
+<!-- 1. HERO SECTION FULL-BLEED BACKGROUND -->
+  <section class="relative min-h-screen pt-32 pb-20 md:pt-40 md:pb-28 flex items-center bg-neutral-900 overflow-hidden border-b border-neutral-100">
+    
+    <!-- Immagine di Sfondo Full-Bleed -->
+    <div class="absolute inset-0 z-0">
+      <img 
+        src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&q=80&w=2000" 
+        alt="OG Medica Clinica Estetica" 
+        class="w-full h-full object-cover object-center opacity-40"
+      />
+      <!-- Gradient Overlay -->
+      <div class="absolute inset-0 bg-gradient-to-r from-neutral-950/90 via-neutral-950/65 to-transparent"></div>
+    </div>
+
+    <!-- Contenuto Hero -->
+    <div class="relative z-10 max-w-7xl mx-auto px-6 w-full">
+      <div class="max-w-2xl text-white">
+        
+        <!-- BLOCCO RIPROVA SOCIALE: 5 Stelle + Valutazione -->
+        <div class="inline-flex items-center gap-3 bg-white/10 backdrop-blur-md px-4 py-2 rounded-full border border-white/15 mb-6">
+          <div class="flex text-amber-400 text-sm">
+            ★ ★ ★ ★ ★
+          </div>
+          <span class="text-xs font-light text-neutral-200">
+            <strong class="font-semibold text-white">4.8/5</strong> da 200+ pazienti soddisfatti
+          </span>
+        </div>
+
+        <!-- Sottotitolo richiesto -->
+        <span class="text-xs font-semibold tracking-widest uppercase text-neutral-300 block">
+          Clinica di Medicina Estetica Avanzata a Catania & Milano
+        </span>
+
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight mt-3 leading-tight text-white">
+          Esalta la tua bellezza naturale.
+        </h1>
+
+        <!-- Descrizione Dott.ssa Castorina -->
+        <p class="text-neutral-200 font-light mt-6 text-base sm:text-lg leading-relaxed">
+          Diretta dalla Dott.ssa Milena Castorina, specialista in ricostruzione e rimodellamento del viso con iniettabili con oltre 20 anni di esperienza.
+        </p>
+
+        <!-- Bottoni CTA & Numero Telefonico -->
+        <div class="mt-10 flex flex-col sm:flex-row items-start sm:items-center gap-5">
+          <a 
+            href="https://wa.me/393407699438?text=Buongiorno,%20vorrei%20prenotare%20una%20consulenza." 
+            target="_blank" 
+            rel="noopener noreferrer"
+            class="inline-flex justify-center items-center bg-white text-[#111111] px-8 py-4 rounded-full text-xs font-semibold uppercase tracking-widest hover:bg-neutral-200 transition-all shadow-lg"
+          >
+            Prenota su WhatsApp
+          </a>
+          
+          <a 
+            href="tel:+393407699438" 
+            class="text-xs sm:text-sm font-medium text-neutral-300 hover:text-white transition-colors flex items-center gap-1"
+          >
+            o chiama il <span class="underline underline-offset-4 font-semibold text-white ml-1">(+39) 340 769 9438</span>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. I TRATTAMENTI PIÙ RICHIESTI -->
+  <section class="py-24 px-6 max-w-7xl mx-auto border-b border-neutral-100">
+    <div class="max-w-3xl mb-12">
+      <span class="text-xs font-semibold tracking-widest uppercase text-neutral-400 block">Soluzioni Per Inestetismo</span>
+      <h2 class="text-3xl md:text-4xl font-extrabold text-[#111111] mt-2">I Trattamenti più Richiesti</h2>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      
+      <!-- Viso -->
+      <div class="bg-white p-8 rounded-3xl border border-neutral-200/80 hover:border-neutral-400 transition-all hover:shadow-sm flex flex-col justify-between">
+        <div>
+          <span class="text-[10px] font-bold tracking-widest uppercase text-neutral-400">01 / VISO</span>
+          <h3 class="text-2xl font-bold text-[#111111] mt-4">Medicina Estetica Viso</h3>
+          <p class="text-neutral-600 font-light text-sm mt-3 leading-relaxed">
+            Filler Acido Ialuronico, Botox, Biostimolazione e Rinofiller per distendere e ripristinare i volumi.
+          </p>
+        </div>
+        <a href="/trattamenti/viso" class="mt-8 text-xs font-semibold uppercase tracking-wider text-[#111111] inline-flex items-center gap-2 hover:underline">
+          Scopri i trattamenti viso &rarr;
+        </a>
+      </div>
+
+      <!-- Corpo -->
+      <div class="bg-white p-8 rounded-3xl border border-neutral-200/80 hover:border-neutral-400 transition-all hover:shadow-sm flex flex-col justify-between">
+        <div>
+          <span class="text-[10px] font-bold tracking-widest uppercase text-neutral-400">02 / CORPO</span>
+          <h3 class="text-2xl font-bold text-[#111111] mt-4">Remodelling & Silhouette</h3>
+          <p class="text-neutral-600 font-light text-sm mt-3 leading-relaxed">
+            Mesoterapia, Radiofrequenza Medicale e protocolli integrati per adipe localizzato e tonificazione.
+          </p>
+        </div>
+        <a href="/trattamenti/corpo" class="mt-8 text-xs font-semibold uppercase tracking-wider text-[#111111] inline-flex items-center gap-2 hover:underline">
+          Scopri i trattamenti corpo &rarr;
+        </a>
+      </div>
+
+      <!-- Laser -->
+      <div class="bg-white p-8 rounded-3xl border border-neutral-200/80 hover:border-neutral-400 transition-all hover:shadow-sm flex flex-col justify-between">
+        <div>
+          <span class="text-[10px] font-bold tracking-widest uppercase text-neutral-400">03 / LASER</span>
+          <h3 class="text-2xl font-bold text-[#111111] mt-4">Tecnologia Laser</h3>
+          <p class="text-neutral-600 font-light text-sm mt-3 leading-relaxed">
+            Laser CO2 Frazionato ed epilazione medicale definitiva per rimozione macchie, cicatrici e resurfacing.
+          </p>
+        </div>
+        <a href="/trattamenti/laser" class="mt-8 text-xs font-semibold uppercase tracking-wider text-[#111111] inline-flex items-center gap-2 hover:underline">
+          Scopri la tecnologia laser &rarr;
+        </a>
+      </div>
+
+    </div>
+
+    <!-- Bottone in Fondo Sezione -->
+    <div class="mt-12 text-center">
+      <a href="/trattamenti/viso" class="inline-flex items-center justify-center bg-[#111111] text-white px-8 py-4 rounded-full text-xs font-semibold uppercase tracking-widest hover:bg-neutral-800 transition-all">
+        Vedi Tutti i Trattamenti &rarr;
+      </a>
+    </div>
+  </section>
+
+  <!-- 3. IL NOSTRO TEAM (COMPETENZA & SICUREZZA) -->
+  <section class="py-24 px-6 max-w-7xl mx-auto border-b border-neutral-100">
+    <div class="max-w-3xl mb-12">
+      <span class="text-xs font-semibold tracking-widest uppercase text-neutral-400 block">Competenza & Rigore Scientifico</span>
+      <h2 class="text-3xl md:text-4xl font-extrabold text-[#111111] mt-2">Il Nostro Team Medico</h2>
+      <p class="text-neutral-600 font-light mt-4 leading-relaxed text-base">
+        Un'équipe altamente qualificata guidata dall'etica professionale e dall'orientamento all'eccellenza.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div class="bg-neutral-50 p-8 rounded-3xl border border-neutral-200/60 flex flex-col sm:flex-row gap-6 items-center">
+        <div class="w-28 h-28 bg-neutral-200 rounded-2xl flex-shrink-0"></div>
+        <div>
+          <h3 class="text-xl font-bold text-[#111111]">Dr. Orlando Garcia</h3>
+          <p class="text-xs text-neutral-500 uppercase tracking-widest font-semibold mt-1">Direttore Sanitario</p>
+          <p class="text-neutral-600 font-light text-xs mt-3 leading-relaxed">
+            Specializzato in medicina estetica rigenerativa e armonizzazione facciale avanzata.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-12 text-center">
+      <a href="/team" class="inline-flex items-center justify-center bg-neutral-100 text-[#111111] px-8 py-4 rounded-full text-xs font-semibold uppercase tracking-widest hover:bg-neutral-200 transition-all border border-neutral-200/80">
+        Scopri di più sul Team &rarr;
+      </a>
+    </div>
+  </section>
+
+  <!-- 4. GALLERIA RISULTATI (PRIMA & DOPO) + RECENSIONI -->
+  <section class="py-24 px-6 max-w-7xl mx-auto border-b border-neutral-100">
+    <div class="max-w-3xl mb-12">
+      <span class="text-xs font-semibold tracking-widest uppercase text-neutral-400 block">Riprova Sociale & Garanzia</span>
+      <h2 class="text-3xl md:text-4xl font-extrabold text-[#111111] mt-2">Risultati Reali & Opinioni</h2>
+    </div>
+
+    <!-- Griglia Prima/Dopo -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+      <div class="bg-white p-6 rounded-3xl border border-neutral-200/80">
+        <div class="grid grid-cols-2 gap-4">
+          <div class="aspect-square bg-neutral-100 rounded-2xl flex items-center justify-center text-xs text-neutral-400">Prima</div>
+          <div class="aspect-square bg-neutral-100 rounded-2xl flex items-center justify-center text-xs text-neutral-400">Dopo</div>
+        </div>
+        <h4 class="font-bold text-[#111111] mt-4 text-sm">Rimodellamento Labbra</h4>
+        <p class="text-xs text-neutral-500 font-light mt-1">Definizione dei contorni e ripristino del volume idrico naturale.</p>
+      </div>
+
+      <div class="bg-white p-6 rounded-3xl border border-neutral-200/80">
+        <div class="grid grid-cols-2 gap-4">
+          <div class="aspect-square bg-neutral-100 rounded-2xl flex items-center justify-center text-xs text-neutral-400">Prima</div>
+          <div class="aspect-square bg-neutral-100 rounded-2xl flex items-center justify-center text-xs text-neutral-400">Dopo</div>
+        </div>
+        <h4 class="font-bold text-[#111111] mt-4 text-sm">Protocollo Resurfacing Laser</h4>
+        <p class="text-xs text-neutral-500 font-light mt-1">Riduzione delle rughe sottili e omogeneizzazione della texture cutanea.</p>
+      </div>
+    </div>
+
+    <!-- Recensioni dei Pazienti -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="bg-neutral-50 p-6 rounded-2xl border border-neutral-200/60">
+        <p class="text-xs text-neutral-600 font-light leading-relaxed">"Professionalità eccellente. Risultato estremamente naturale esattamente come desideravo."</p>
+        <span class="block text-xs font-bold text-[#111111] mt-4">— Maria V.</span>
+      </div>
+      <div class="bg-neutral-50 p-6 rounded-2xl border border-neutral-200/60">
+        <p class="text-xs text-neutral-600 font-light leading-relaxed">"Clinica curata nei minimi dettagli e personale medico di grande empatia e chiarezza."</p>
+        <span class="block text-xs font-bold text-[#111111] mt-4">— Elena G.</span>
+      </div>
+      <div class="bg-neutral-50 p-6 rounded-2xl border border-neutral-200/60">
+        <p class="text-xs text-neutral-600 font-light leading-relaxed">"Il miglior centro a Catania per i trattamenti laser cutanei. Consigliatissimo."</p>
+        <span class="block text-xs font-bold text-[#111111] mt-4">— Marco S.</span>
+      </div>
+    </div>
+
+    <div class="mt-12 text-center">
+      <a href="/sedi" class="inline-flex items-center justify-center bg-neutral-100 text-[#111111] px-8 py-4 rounded-full text-xs font-semibold uppercase tracking-widest hover:bg-neutral-200 transition-all border border-neutral-200/80">
+        Guarda la Galleria Risultati &rarr;
+      </a>
+    </div>
+  </section>
+
+  <!-- 5. DOVE CI TROVIAMO & SEDI (INFO PRATICHE) -->
+  <section class="py-24 px-6 max-w-7xl mx-auto border-b border-neutral-100">
+    <div class="max-w-3xl mb-12">
+      <span class="text-xs font-semibold tracking-widest uppercase text-neutral-400 block">Info Pratiche & Logistica</span>
+      <h2 class="text-3xl md:text-4xl font-extrabold text-[#111111] mt-2">Dove Ci Troviamo</h2>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      
+      <!-- Sede Catania -->
+      <div class="bg-white p-8 rounded-3xl border border-neutral-200/80 flex flex-col justify-between">
+        <div>
+          <span class="text-[10px] font-bold tracking-widest uppercase text-neutral-400">Clinica Catania</span>
+          <h3 class="text-2xl font-bold text-[#111111] mt-2">Catania</h3>
+          <p class="text-xs text-neutral-600 mt-4 leading-relaxed">
+            Via Gustavo Vagliasindi, 52 - 2° Piano<br />
+            <strong>Orari:</strong> Lun, Mer e Ven dalle 14:00 alle 19:30
+          </p>
+        </div>
+        <div class="mt-8">
+          <a 
+            href="https://maps.google.com/?q=Via+Gustavo+Vagliasindi+52+Catania" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            class="text-xs font-semibold uppercase tracking-wider text-[#111111] underline"
+          >
+            Calcola percorso Catania &rarr;
+          </a>
+        </div>
+      </div>
+
+      <!-- Sede Milano -->
+      <div class="bg-white p-8 rounded-3xl border border-neutral-200/80 flex flex-col justify-between">
+        <div>
+          <span class="text-[10px] font-bold tracking-widest uppercase text-neutral-400">Clinica Milano</span>
+          <h3 class="text-2xl font-bold text-[#111111] mt-2">Milano</h3>
+          <p class="text-xs text-neutral-600 mt-4 leading-relaxed">
+            Via Cristoforo Colombo, 129<br />
+            <strong>Orari:</strong> Lun, Mer e Ven dalle 14:00 alle 19:30
+          </p>
+        </div>
+        <div class="mt-8">
+          <a 
+            href="https://maps.google.com/?q=Via+Cristoforo+Colombo+129+Milano" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            class="text-xs font-semibold uppercase tracking-wider text-[#111111] underline"
+          >
+            Calcola percorso Milano &rarr;
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="mt-12 text-center">
+      <a href="/contatti" class="inline-flex items-center justify-center bg-[#111111] text-white px-8 py-4 rounded-full text-xs font-semibold uppercase tracking-widest hover:bg-neutral-800 transition-all">
+        Contattaci o Calcola il Percorso &rarr;
+      </a>
+    </div>
+  </section>
+
+  <!-- 6. CTA FINALE -->
+  <section class="py-24 px-6 max-w-7xl mx-auto">
+    <div class="bg-neutral-900 text-white rounded-3xl p-10 md:p-16 text-center max-w-4xl mx-auto">
+      <h2 class="text-3xl md:text-5xl font-extrabold tracking-tight">Prenota la tua prima visita di valutazione</h2>
+      <p class="text-neutral-400 font-light mt-4 text-sm md:text-base max-w-xl mx-auto leading-relaxed">
+        Contatta la segreteria medica via WhatsApp o invia un messaggio per richiedere informazioni sui trattamenti e sulla disponibilità.
+      </p>
+      <div class="mt-8 flex flex-col sm:flex-row justify-center gap-4">
+        <a 
+          href="https://wa.me/393407699438?text=Buongiorno,%20desidero%20prenotare%20una%20visita." 
+          target="_blank" 
+          rel="noopener noreferrer"
+          class="inline-block bg-white text-[#111111] px-8 py-4 rounded-full text-xs font-semibold uppercase tracking-widest hover:bg-neutral-200 transition-all shadow-md"
+        >
+          WhatsApp Diretto: +39 3407699438
+        </a>
+      </div>
+    </div>
+  </section>
+
+</Layout>

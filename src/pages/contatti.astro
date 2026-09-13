@@ -1,0 +1,80 @@
+---
+// src/pages/contatti.astro
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Contatti" description="Mettiti in contatto con la segreteria medica di OG Medica. Prenota visite di valutazione e richiedi informazioni.">
+  <section class="py-16 px-6 max-w-7xl mx-auto">
+    <div class="max-w-3xl mb-12">
+      <span class="text-xs font-semibold tracking-widest uppercase text-neutral-400">Segreteria Medica</span>
+      <h1 class="text-4xl md:text-5xl font-extrabold text-[#111111] mt-2">Contatti & Prenotazioni</h1>
+      <p class="text-neutral-600 font-light mt-4 leading-relaxed text-base">
+        Il nostro team d'accoglienza è a disposizione per fornire informazioni su protocolli, tempi di recupero e costi dei trattamenti.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+      
+      <!-- Informazioni Dirette -->
+      <div class="space-y-8">
+        <div class="bg-neutral-50 p-8 rounded-3xl border border-neutral-200/60">
+          <h3 class="text-lg font-bold text-[#111111] mb-2">Canale Prioritario WhatsApp</h3>
+          <p class="text-xs text-neutral-500 font-light leading-relaxed mb-6">
+            Risposta rapida negli orari di apertura per appuntamenti, informazioni sui medici in sede e tempi di attesa.
+          </p>
+          <a 
+            href="https://wa.me/393000000000?text=Buongiorno,%20desidero%20prenotare%20una%20visita." 
+            target="_blank" 
+            rel="noopener noreferrer"
+            class="inline-block bg-[#111111] text-white text-xs font-semibold uppercase tracking-wider px-6 py-3.5 rounded-full hover:bg-neutral-800 transition-all shadow-sm"
+          >
+            Avvia Chat WhatsApp
+          </a>
+        </div>
+
+        <div class="space-y-4 text-sm text-neutral-600 font-light pl-2">
+          <div>
+            <span class="text-xs uppercase tracking-widest text-neutral-400 font-bold block">Centralino Telefonico</span>
+            <p class="text-[#111111] font-medium mt-1">+39 02 0000 0000</p>
+          </div>
+          <div>
+            <span class="text-xs uppercase tracking-widest text-neutral-400 font-bold block">Email Segreteria</span>
+            <p class="text-[#111111] font-medium mt-1">info@ogmedica.it</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modulo di Contatto Rapido -->
+      <div class="bg-white p-8 rounded-3xl border border-neutral-200/80 shadow-sm">
+        <h3 class="text-xl font-bold text-[#111111] mb-6">Invia una richiesta</h3>
+        <form class="space-y-4" onsubmit="event.preventDefault();">
+          <div>
+            <label class="block text-xs font-semibold uppercase tracking-wider text-neutral-500 mb-1">Nome e Cognome</label>
+            <input type="text" required class="w-full px-4 py-3 rounded-xl border border-neutral-200 text-sm focus:outline-none focus:border-[#111111]" placeholder="Mario Rossi" />
+          </div>
+          <div>
+            <label class="block text-xs font-semibold uppercase tracking-wider text-neutral-500 mb-1">Telefono / WhatsApp</label>
+            <input type="tel" required class="w-full px-4 py-3 rounded-xl border border-neutral-200 text-sm focus:outline-none focus:border-[#111111]" placeholder="+39 333 0000000" />
+          </div>
+          <div>
+            <label class="block text-xs font-semibold uppercase tracking-wider text-neutral-500 mb-1">Area di Interesse</label>
+            <select class="w-full px-4 py-3 rounded-xl border border-neutral-200 text-sm focus:outline-none focus:border-[#111111] bg-white">
+              <option>Medicina Estetica Viso</option>
+              <option>Trattamenti Corpo</option>
+              <option>Tecnologia Laser</option>
+              <option>Prima Visita di Valutazione</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-xs font-semibold uppercase tracking-wider text-neutral-500 mb-1">Messaggio</label>
+            <textarea rows="3" class="w-full px-4 py-3 rounded-xl border border-neutral-200 text-sm focus:outline-none focus:border-[#111111]" placeholder="Richiesta informazioni..."></textarea>
+          </div>
+          <button type="submit" class="w-full bg-[#111111] text-white text-xs font-semibold uppercase tracking-wider py-4 rounded-full hover:bg-neutral-800 transition-all">
+            Invia Richiesta
+          </button>
+        </form>
+      </div>
+
+    </div>
+  </section>
+</Layout>

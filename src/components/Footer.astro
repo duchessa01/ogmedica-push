@@ -1,0 +1,74 @@
+---
+// src/components/Footer.astro
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="bg-neutral-950 text-white pt-16 pb-12 px-6 border-t border-neutral-900">
+  <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10 pb-12 border-b border-neutral-800/80">
+    
+    <!-- Colonna 1: Le nostre sedi -->
+    <div>
+      <h4 class="text-xs font-semibold uppercase tracking-widest text-neutral-300 mb-4">Le Nostre Sedi</h4>
+      <div class="space-y-3 text-xs text-neutral-400 font-light leading-relaxed">
+        <p>
+          <strong class="font-medium text-white block">Catania</strong>
+          Via Gustavo Vagliasindi, 52 - 2° Piano
+        </p>
+        <p>
+          <strong class="font-medium text-white block">Milano</strong>
+          Via Cristoforo Colombo, 129
+        </p>
+      </div>
+    </div>
+
+    <!-- Colonna 2: Orari di apertura -->
+    <div>
+      <h4 class="text-xs font-semibold uppercase tracking-widest text-neutral-300 mb-4">Orari di Apertura</h4>
+      <p class="text-xs text-neutral-400 font-light leading-relaxed">
+        <strong class="font-medium text-white block mb-1">Lunedì, Mercoledì e Venerdì</strong>
+        dalle 14:00 alle 19:30
+      </p>
+    </div>
+
+    <!-- Colonna 3: Contatti -->
+    <div>
+      <h4 class="text-xs font-semibold uppercase tracking-widest text-neutral-300 mb-4">Contatti</h4>
+      <div class="space-y-1.5 text-xs text-neutral-400 font-light leading-relaxed">
+        <p><strong class="font-medium text-white">Tel:</strong> <a href="tel:+393407699438" class="hover:text-white transition-colors">+39 3407699438</a></p>
+        <p><strong class="font-medium text-white">Email:</strong> <a href="mailto:info@ogmedica.com" class="hover:text-white transition-colors">info@ogmedica.com</a></p>
+        <p><strong class="font-medium text-white">Pec:</strong> <a href="mailto:ogmedica@pec.it" class="hover:text-white transition-colors">ogmedica@pec.it</a></p>
+      </div>
+    </div>
+
+    <!-- Colonna 4: Social Media & WhatsApp CTA -->
+    <div>
+      <h4 class="text-xs font-semibold uppercase tracking-widest text-neutral-300 mb-4">Social Media</h4>
+      <div class="flex space-x-4 text-xs font-medium text-neutral-300 mb-6">
+        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">Instagram</a>
+        <span>•</span>
+        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">Facebook</a>
+      </div>
+      <a 
+        href="https://wa.me/393407699438?text=Buongiorno,%20desidero%20maggiori%20informazioni." 
+        target="_blank" 
+        rel="noopener noreferrer"
+        class="inline-block bg-white text-[#111111] text-[11px] font-semibold uppercase tracking-widest px-5 py-2.5 rounded-full hover:bg-neutral-200 transition-all"
+      >
+        Scrivici su WhatsApp
+      </a>
+    </div>
+
+  </div>
+
+  <!-- Bottom Bar: Dati Societari & Link Legali -->
+  <div class="max-w-7xl mx-auto mt-8 flex flex-col lg:flex-row items-center justify-between text-[11px] text-neutral-500 font-light gap-4 text-center lg:text-left">
+    <p>
+      ©{currentYear} OG MEDICA srl | P. IVA 03645210877 | Capitale sociale versato: 10.000 € | Registro delle Imprese di Catania | N° Registro delle Imprese: CT- 246285
+    </p>
+    <div class="flex flex-wrap justify-center gap-6 whitespace-nowrap">
+      <a href="/lavora-con-noi" class="hover:text-neutral-300 transition-colors">Lavora con noi</a>
+      <a href="/privacy-policy" class="hover:text-neutral-300 transition-colors">Privacy Policy</a>
+      <a href="/cookie-policy" class="hover:text-neutral-300 transition-colors">Cookie Policy</a>
+    </div>
+  </div>
+</footer>
