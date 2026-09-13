@@ -4,57 +4,169 @@ import Layout from '../layouts/Layout.astro';
 
 const sedi = [
   {
-    citta: 'Milano Central',
-    indirizzo: 'Via Montenapoleone 18, 20121 Milano',
-    telefono: '+39 02 8000 1111',
-    orari: 'Lun - Ven: 09:00 - 19:30 | Sab: 09:00 - 13:00',
-    email: 'milano@ogmedica.it'
+    id: 'catania',
+    città: 'Catania',
+    indirizzo: 'Via Gustavo Vagliasindi, 52',
+    capCitta: '95126 Catania (CT)',
+    telefono: '+39 340 769 9438',
+    descrizione: 'Una posizione strategica: facilmente raggiungibile, con parcheggio gratuito disponibile, lontano dal traffico del centro ma vicino ai principali snodi stradali ed extraurbani.',
+    orari: [
+      { giorni: 'Lunedì, Mercoledì e Venerdì', ore: '14:00 alle 19:30' },
+    ],
+    immagine: 'https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&q=80&w=1200',
+    // URL di incorporamento Google Maps (embed)
+    mapEmbedUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3165.151740924192!2d15.0838!3d37.5199!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x131419325983796d%3A0x1d0f5028445df9e0!2sVia%20Gustavo%20Vagliasindi%2C%2052%2C%2095126%20Catania%20CT!5e0!3m2!1sit!2sit!4v1650000000000!5m2!1sit!2sit',
+    gmapsLink: 'https://maps.google.com/?q=Via+Gustavo+Vagliasindi+52+Catania'
   },
   {
-    citta: 'Roma Parioli',
-    indirizzo: 'Via Bruno Buozzi 42, 00197 Roma',
-    telefono: '+39 06 8000 2222',
-    orari: 'Lun - Ven: 09:30 - 19:00',
-    email: 'roma@ogmedica.it'
+    id: 'milano',
+    città: 'Milano',
+    indirizzo: 'Via Giuseppe Broggi, 8',
+    capCitta: '20129 Milano (MI)',
+    telefono: '+39 340 769 9438',
+    descrizione: 'Uno spazio raffinato nel cuore di Milano, pensato per accogliere i pazienti che desiderano sottoporsi a trattamenti iniettabili e percorsi di bellezza personalizzati.',
+    orari: [
+      { giorni: 'Ricevimento', ore: 'Su Appuntamento (Date mensili dedicate)' },
+      { giorni: 'Giorni di apertura', ore: 'Contatta la segreteria per disponibilità' }
+    ],
+    immagine: 'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&q=80&w=1200',
+    // URL di incorporamento Google Maps (embed)
+    mapEmbedUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2797.986877239121!2d9.2045!3d45.4781!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4786c6d0429f6b9b%3A0x40df8374d812cd0!2sVia%20Giuseppe%20Broggi%2C%208%2C%2020129%20Milano%20MI!5e0!3m2!1sit!2sit!4v1650000000000!5m2!1sit!2sit',
+    gmapsLink: 'https://maps.google.com/?q=Via+Giuseppe+Broggi+8+Milano'
   }
 ];
 ---
 
-<Layout title="Le Nostre Sedi" description="Scopri le cliniche OG Medica a Milano e Roma. Strutture mediche all'avanguardia con i migliori protocolli.">
-  <section class="py-16 px-6 max-w-7xl mx-auto">
-    <div class="max-w-3xl mb-12">
-      <span class="text-xs font-semibold tracking-widest uppercase text-neutral-400">Presenza Sulla Mappa</span>
-      <h1 class="text-4xl md:text-5xl font-extrabold text-[#111111] mt-2">Le Nostre Cliniche</h1>
-      <p class="text-neutral-600 font-light mt-4 leading-relaxed text-base">
-        Ambienti progettati per garantire riservatezza, massima igiene sanitaria e il massimo comfort durante ogni trattamento.
-      </p>
-    </div>
+<Layout 
+  title="Le Nostre Sedi | Catania & Milano - OG Medica" 
+  description="Scopri le sedi di OG Medica a Catania e Milano. Indirizzi, mappe interattive, immagini delle cliniche e orari di ricevimento."
+>
+  <!-- HEADER MOBILE FIRST -->
+  <section class="pt-28 pb-6 px-4 bg-neutral-900 text-white text-center">
+    <span class="text-[10px] font-bold tracking-widest uppercase text-neutral-400 block mb-1">
+      Dove Riceviamo
+    </span>
+    <h1 class="text-3xl font-black tracking-tight">
+      Le Nostre Sedi
+    </h1>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+    <!-- Jump Links (Pillole di navigazione rapida per mobile) -->
+    <div class="flex justify-center gap-2 mt-5">
       {sedi.map((sede) => (
-        <div class="bg-white p-8 rounded-3xl border border-neutral-200/80 hover:border-neutral-400 transition-all shadow-sm">
-          <span class="text-[10px] font-bold tracking-widest uppercase text-neutral-400">Clinica Medica</span>
-          <h2 class="text-2xl font-bold text-[#111111] mt-2">{sede.citta}</h2>
+        <a 
+          href={`#${sede.id}`} 
+          class="px-4 py-2 rounded-full bg-white/10 hover:bg-white/20 text-xs font-bold uppercase tracking-wider backdrop-blur-md border border-white/15 transition-all"
+        >
+          {sede.città}
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <!-- CONTENUTO SEDI (Layout verticale mobile-first) -->
+  <section class="py-12 px-4 bg-neutral-50">
+    <div class="max-w-xl mx-auto space-y-16">
+      
+      {sedi.map((sede) => (
+        <div id={sede.id} class="bg-white rounded-3xl shadow-xl border border-neutral-100 overflow-hidden scroll-mt-24">
           
-          <div class="mt-6 space-y-3 text-sm text-neutral-600 font-light">
-            <p><strong class="font-medium text-[#111111]">Indirizzo:</strong> {sede.indirizzo}</p>
-            <p><strong class="font-medium text-[#111111]">Telefono:</strong> {sede.telefono}</p>
-            <p><strong class="font-medium text-[#111111]">Email:</strong> {sede.email}</p>
-            <p><strong class="font-medium text-[#111111]">Orari:</strong> {sede.orari}</p>
+          <!-- 1. IMMAGINE DELLA CLINICA -->
+          <div class="relative h-64 sm:h-72 w-full">
+            <img 
+              src={sede.immagine} 
+              alt={`Clinica OG Medica ${sede.città}`} 
+              class="w-full h-full object-cover"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-neutral-950/70 via-transparent to-transparent"></div>
+            <div class="absolute bottom-4 left-4 text-white">
+              <span class="text-[10px] font-extrabold uppercase tracking-widest bg-white/20 backdrop-blur-md px-3 py-1 rounded-full border border-white/20">
+                Studio Medico
+              </span>
+              <h2 class="text-2xl font-black mt-1">OG Medica {sede.città}</h2>
+            </div>
           </div>
 
-          <div class="mt-8 pt-6 border-t border-neutral-100 flex flex-col sm:flex-row gap-3">
-            <a 
-              href={`https://wa.me/393000000000?text=Buongiorno,%20vorrei%20informazioni%20sulla%20sede%20di%20${encodeURIComponent(sede.citta)}.`}
-              target="_blank" 
-              rel="noopener noreferrer"
-              class="bg-[#111111] text-white text-center text-xs font-semibold uppercase tracking-wider px-5 py-3 rounded-full hover:bg-neutral-800 transition-all"
-            >
-              Prenota in questa sede
-            </a>
+          <div class="p-6 space-y-6">
+            
+            <!-- 2. INDIRIZZO E CTA RAPIDA NAVIGAZIONE / WHATSAPP -->
+            <div class="space-y-4">
+              <div class="flex items-start gap-3 bg-neutral-50 p-4 rounded-2xl border border-neutral-100">
+                <svg class="w-5 h-5 text-neutral-800 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+                <div class="flex-1">
+                  <p class="text-sm font-bold text-[#111111]">{sede.indirizzo}</p>
+                  <p class="text-xs text-neutral-500">{sede.capCitta}</p>
+                </div>
+              </div>
+
+              <!-- Bottoni Azione Rapida Mobile (Full Width) -->
+              <div class="grid grid-cols-2 gap-3">
+                <a 
+                  href={sede.gmapsLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="flex items-center justify-center gap-2 bg-neutral-100 hover:bg-neutral-200 text-[#111111] py-3 px-4 rounded-2xl text-xs font-bold uppercase tracking-wider border border-neutral-200 transition-all text-center"
+                >
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"/></svg>
+                  Google Maps
+                </a>
+                
+                <a 
+                  href={`https://wa.me/393407699438?text=Buongiorno,%20vorrei%20informazioni%20sulla%20sede%20di%20${sede.città}.`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#20ba5a] text-white py-3 px-4 rounded-2xl text-xs font-bold uppercase tracking-wider shadow-md transition-all text-center"
+                >
+                  WhatsApp
+                </a>
+              </div>
+            </div>
+
+            <!-- 3. PICCOLA DESCRIZIONE -->
+            <div>
+              <p class="text-xs sm:text-sm text-neutral-600 font-light leading-relaxed">
+                {sede.descrizione}
+              </p>
+            </div>
+
+            <!-- 4. SPAZIO GIORNI E ORARI -->
+            <div class="border-t border-neutral-100 pt-5">
+              <h3 class="text-xs font-bold uppercase tracking-wider text-[#111111] mb-3 flex items-center gap-2">
+                <svg class="w-4 h-4 text-neutral-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                Orari di Apertura
+              </h3>
+              <ul class="space-y-2 text-xs text-neutral-600 bg-neutral-50 p-4 rounded-2xl border border-neutral-100">
+                {sede.orari.map((item) => (
+                  <li class="flex justify-between items-center border-b border-neutral-200/50 pb-1.5 last:border-none last:pb-0">
+                    <span class="font-medium text-neutral-800">{item.giorni}</span>
+                    <span class="text-neutral-500 text-right">{item.ore}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <!-- 5. GOOGLE MAPS EMBED INTEGRATO -->
+            <div class="pt-2">
+              <div class="rounded-2xl overflow-hidden border border-neutral-200 h-48 w-full shadow-inner">
+                <iframe 
+                  src={sede.mapEmbedUrl}
+                  width="100%" 
+                  height="100%" 
+                  style="border:0;" 
+                  allowfullscreen="" 
+                  loading="lazy" 
+                  referrerpolicy="no-referrer-when-downgrade"
+                  title={`Mappa Clinica OG Medica ${sede.città}`}
+                ></iframe>
+              </div>
+            </div>
+
           </div>
         </div>
       ))}
+
     </div>
   </section>
 </Layout>

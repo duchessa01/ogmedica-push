@@ -1,6 +1,7 @@
 ---
 // src/pages/index.astro
 import Layout from '../layouts/Layout.astro';
+import BeforeAfterSlider from '../components/BeforeAfterSlider.astro';
 ---
 
 <Layout title="Home" description="Clinica di Medicina Estetica Avanzata a Catania e Milano - Protocolli medici su misura e risultati naturali.">
@@ -161,35 +162,10 @@ import Layout from '../layouts/Layout.astro';
     </div>
   </section>
 
-  <!-- 4. GALLERIA RISULTATI (PRIMA & DOPO) + RECENSIONI -->
-  <section class="py-24 px-6 max-w-7xl mx-auto border-b border-neutral-100">
-    <div class="max-w-3xl mb-12">
-      <span class="text-xs font-semibold tracking-widest uppercase text-neutral-400 block">Riprova Sociale & Garanzia</span>
-      <h2 class="text-3xl md:text-4xl font-extrabold text-[#111111] mt-2">Risultati Reali & Opinioni</h2>
-    </div>
-
-    <!-- Griglia Prima/Dopo -->
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-      <div class="bg-white p-6 rounded-3xl border border-neutral-200/80">
-        <div class="grid grid-cols-2 gap-4">
-          <div class="aspect-square bg-neutral-100 rounded-2xl flex items-center justify-center text-xs text-neutral-400">Prima</div>
-          <div class="aspect-square bg-neutral-100 rounded-2xl flex items-center justify-center text-xs text-neutral-400">Dopo</div>
-        </div>
-        <h4 class="font-bold text-[#111111] mt-4 text-sm">Rimodellamento Labbra</h4>
-        <p class="text-xs text-neutral-500 font-light mt-1">Definizione dei contorni e ripristino del volume idrico naturale.</p>
-      </div>
-
-      <div class="bg-white p-6 rounded-3xl border border-neutral-200/80">
-        <div class="grid grid-cols-2 gap-4">
-          <div class="aspect-square bg-neutral-100 rounded-2xl flex items-center justify-center text-xs text-neutral-400">Prima</div>
-          <div class="aspect-square bg-neutral-100 rounded-2xl flex items-center justify-center text-xs text-neutral-400">Dopo</div>
-        </div>
-        <h4 class="font-bold text-[#111111] mt-4 text-sm">Protocollo Resurfacing Laser</h4>
-        <p class="text-xs text-neutral-500 font-light mt-1">Riduzione delle rughe sottili e omogeneizzazione della texture cutanea.</p>
-      </div>
-    </div>
+  
 
     <!-- Recensioni dei Pazienti -->
+     <section>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
       <div class="bg-neutral-50 p-6 rounded-2xl border border-neutral-200/60">
         <p class="text-xs text-neutral-600 font-light leading-relaxed">"Professionalità eccellente. Risultato estremamente naturale esattamente come desideravo."</p>

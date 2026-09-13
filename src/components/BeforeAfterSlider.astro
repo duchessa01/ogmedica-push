@@ -1,0 +1,121 @@
+---
+// src/components/BeforeAfterSlider.astro
+interface Props {
+  beforeImage: string;
+  afterImage: string;
+  beforeAlt?: string;
+  afterAlt?: string;
+  title?: string;
+  treatmentName?: string;
+}
+
+const {
+  beforeImage = "https://images.unsplash.com/photo-1512290900673-0498b89e3a63?auto=format&fit=crop&q=80&w=1200",
+  afterImage = "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&q=80&w=1200",
+  beforeAlt = "Prima del trattamento",
+  afterAlt = "Dopo il trattamento",
+  title = "Risultati Clinici",
+  treatmentName = "Filler Labbra & Rimodellamento",
+} = Astro.props;
+---
+
+<div class="max-w-4xl mx-auto my-12 px-4">
+  {title && (
+    <div class="text-center mb-6">
+      <span class="text-xs font-semibold tracking-widest uppercase text-neutral-400 block mb-1">
+        {treatmentName}
+      </span>
+      <h3 class="text-2xl sm:text-3xl font-extrabold text-[#111111] tracking-tight">
+        {title}
+      </h3>
+    </div>
+  )}
+
+  <!-- Contenitore Slider -->
+  <div 
+    class="before-after-container relative w-full aspect-[4/3] sm:aspect-[16/10] overflow-hidden rounded-2xl select-none shadow-2xl border border-neutral-100 group cursor-ew-resize"
+  >
+    <!-- Immagine "DOPO" (Sfondo base) -->
+    <img 
+      src={afterImage} 
+      alt={afterAlt} 
+      class="absolute inset-0 w-full h-full object-cover object-center"
+      draggable="false"
+    />
+    <span class="absolute top-4 right-4 bg-neutral-950/70 backdrop-blur-md text-white text-[10px] font-bold uppercase tracking-widest px-3 py-1.5 rounded-full z-10 border border-white/10">
+      Dopo
+    </span>
+
+    <!-- Immagine "PRIMA" (Ritagliata in overlay) -->
+    <div class="before-image-wrapper absolute inset-0 w-1/2 overflow-hidden z-20 border-r-2 border-white/90 shadow-[4px_0_20px_rgba(0,0,0,0.3)]">
+      <img 
+        src={beforeImage} 
+        alt={beforeAlt} 
+        class="absolute inset-0 max-w-none h-full object-cover object-center"
+        draggable="false"
+      />
+      <span class="absolute top-4 left-4 bg-neutral-950/70 backdrop-blur-md text-white text-[10px] font-bold uppercase tracking-widest px-3 py-1.5 rounded-full z-10 border border-white/10">
+        Prima
+      </span>
+    </div>
+
+    <!-- Handle di Trascina (Maniglia Centrale) -->
+    <div class="slider-handle absolute top-0 bottom-0 left-1/2 -translate-x-1/2 z-30 flex items-center justify-center pointer-events-none">
+      <div class="w-10 h-10 rounded-full bg-white text-[#111111] shadow-2xl flex items-center justify-center border border-neutral-200 group-hover:scale-110 transition-transform duration-150">
+        <svg class="w-5 h-5 text-neutral-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M8 7l-5 5 5 5M16 7l5 5-5 5" />
+        </svg>
+      </div>
+    </div>
+
+    <!-- Input Range Invisibile per Interazione Fluida -->
+    <input 
+      type="range" 
+      min="0" 
+      max="100" 
+      value="50" 
+      class="slider-input absolute inset-0 w-full h-full opacity-0 z-40 cursor-ew-resize"
+      aria-label="Confronto Prima e Dopo"
+    />
+  </div>
+</div>
+
+<script>
+  // Inizializzazione per supportare più slider nella stessa pagina
+  const initBeforeAfter = () => {
+    const containers = document.querySelectorAll('.before-after-container');
+
+    containers.forEach((container) => {
+      const input = container.querySelector('.slider-input') as HTMLInputElement;
+      const beforeWrapper = container.querySelector('.before-image-wrapper') as HTMLDivElement;
+      const beforeImg = beforeWrapper?.querySelector('img') as HTMLImageElement;
+      const handle = container.querySelector('.slider-handle') as HTMLDivElement;
+
+      if (!input || !beforeWrapper || !beforeImg || !handle) return;
+
+      // Aggiorna le dimensioni dell'immagine ritagliata mantenendo le proporzioni corrette
+      const syncImageSize = () => {
+        beforeImg.style.width = `${container.clientWidth}px`;
+      };
+
+      // Aggiorna posizione della linea di demarcazione
+      const updateSlider = () => {
+        const value = input.value;
+        beforeWrapper.style.width = `${value}%`;
+        handle.style.left = `${value}%`;
+      };
+
+      // Listener eventi
+      input.addEventListener('input', updateSlider);
+      window.addEventListener('resize', syncImageSize);
+
+      // Inizializzazione iniziale
+      syncImageSize();
+      updateSlider();
+    });
+  };
+
+  // Esegui al caricamento
+  initBeforeAfter();
+  document.addEventListener('astro:page-load', initBeforeAfter);
+</script>
