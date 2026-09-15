@@ -40,15 +40,25 @@ const treatmentCategories = [
 ];
 ---
 
-<header id="site-header" class="fixed top-0 left-0 right-0 z-40 transition-all duration-300 bg-transparent text-white border-b border-white/10">
+<header
+  id="site-header"
+  class="fixed top-0 left-0 right-0 z-40 bg-white text-[#111111] border-b border-neutral-100"
+>
   <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-    
+
     <!-- Logo Brand -->
     <a href="/" class="flex flex-col group">
-      <span id="logo-title" class="text-xl md:text-2xl font-black tracking-tighter text-white group-hover:opacity-80 transition-colors uppercase">
+      <span
+        id="logo-title"
+        class="text-xl md:text-2xl font-black tracking-tighter text-[#111111] uppercase"
+      >
         OG MEDICA
       </span>
-      <span id="logo-subtitle" class="text-[9px] font-semibold tracking-widest uppercase text-neutral-300 -mt-1">
+
+      <span
+        id="logo-subtitle"
+        class="text-[9px] font-semibold tracking-widest uppercase text-neutral-400 -mt-1"
+      >
         Medicina Estetica Avanzata
       </span>
     </a>
@@ -56,28 +66,48 @@ const treatmentCategories = [
     <!-- Navigation Desktop -->
     <nav class="hidden lg:flex items-center space-x-8 text-xs font-semibold uppercase tracking-widest">
 
-      <!-- MEGA MENU DROPDOWN "TRATTAMENTI" -->
+      <!-- MEGA MENU DROPDOWN -->
       <div class="relative group py-7">
-        <a href="/trattamenti" class="nav-item flex items-center gap-1 hover:opacity-75 transition-opacity focus:outline-none uppercase tracking-widest font-semibold text-white">
+
+        <a
+          href="/trattamenti"
+          class="nav-item flex items-center gap-1 text-[#111111] hover:opacity-60 focus:outline-none uppercase tracking-widest font-semibold"
+        >
           Trattamenti
-          <svg class="w-3.5 h-3.5 text-neutral-300 group-hover:rotate-180 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+
+          <svg
+            class="w-3.5 h-3.5 text-neutral-500 group-hover:rotate-180 transition-transform duration-200"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M19 9l-7 7-7-7"
+            />
           </svg>
         </a>
 
-        <!-- Dropdown Panel (Harley Street Style Mega Menu) -->
-        <div class="absolute left-1/2 -translate-x-1/2 top-full w-screen max-w-6xl bg-white border border-neutral-100 shadow-xl rounded-2xl p-8 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 grid grid-cols-4 gap-8 pointer-events-none group-hover:pointer-events-auto text-[#111111]">
-          
+        <!-- Dropdown Panel -->
+        <div
+          class="absolute left-1/2 -translate-x-1/2 top-full w-screen max-w-6xl bg-white border border-neutral-100 shadow-xl rounded-2xl p-8 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 grid grid-cols-4 gap-8 pointer-events-none group-hover:pointer-events-auto text-[#111111]"
+        >
+
           {treatmentCategories.map((cat) => (
             <div>
-              <h5 class="text-[11px] font-bold text-[#111111] uppercase tracking-wider mb-4 border-b border-neutral-100 pb-2">
+              <h5
+                class="text-[11px] font-bold text-[#111111] uppercase tracking-wider mb-4 border-b border-neutral-100 pb-2"
+              >
                 {cat.title}
               </h5>
+
               <ul class="space-y-2.5">
                 {cat.items.map((item) => (
                   <li>
-                    <a 
-                      href={item.href} 
+                    <a
+                      href={item.href}
                       class="text-[11px] font-normal text-neutral-500 hover:text-[#111111] hover:translate-x-1 transition-all inline-block capitalize"
                     >
                       {item.name}
@@ -88,148 +118,266 @@ const treatmentCategories = [
             </div>
           ))}
 
-          <div class="col-span-4 bg-neutral-50 p-4 rounded-xl flex items-center justify-between mt-2 border border-neutral-100">
-            <span class="text-xs text-neutral-600 font-light lowercase">Non sai qual è il trattamento più adatto al tuo inestetismo?</span>
-            <a href="/trattamenti" class="text-xs font-bold text-[#111111] uppercase tracking-wider hover:underline">Vedi l'Hub Completo dei Trattamenti &rarr;</a>
+          <div
+            class="col-span-4 bg-neutral-50 p-4 rounded-xl flex items-center justify-between mt-2 border border-neutral-100"
+          >
+            <span class="text-xs text-neutral-600 font-light lowercase">
+              Non sai qual è il trattamento più adatto al tuo inestetismo?
+            </span>
+
+            <a
+              href="/trattamenti"
+              class="text-xs font-bold text-[#111111] uppercase tracking-wider hover:underline"
+            >
+              Vedi l'Hub Completo dei Trattamenti &rarr;
+            </a>
           </div>
 
         </div>
       </div>
 
-      <a href="/team" class="nav-item hover:opacity-75 transition-opacity py-2 text-white">Il Team</a>
-      <a href="/sedi" class="nav-item hover:opacity-75 transition-opacity py-2 text-white">Sedi</a>
-      <a href="/contatti" class="nav-item hover:opacity-75 transition-opacity py-2 text-white">Contatti</a>
+      <a
+        href="/team"
+        class="nav-item text-[#111111] hover:opacity-60 py-2"
+      >
+        Il Team
+      </a>
+
+      <a
+        href="/sedi"
+        class="nav-item text-[#111111] hover:opacity-60 py-2"
+      >
+        Sedi
+      </a>
+
+      <a
+        href="/contatti"
+        class="nav-item text-[#111111] hover:opacity-60 py-2"
+      >
+        Contatti
+      </a>
+
     </nav>
 
-    <!-- Right Header CTA Button -->
+    <!-- Right Header CTA -->
     <div class="hidden sm:flex items-center space-x-4">
-      <a 
-        href="https://wa.me/393407699438?text=Buongiorno,%20desidero%20prenotare%20una%20consulenza." 
+      <a
+        href="https://wa.me/393407699438?text=Buongiorno,%20desidero%20prenotare%20una%20consulenza."
         target="_blank"
         rel="noopener noreferrer"
         id="cta-btn"
-        class="bg-white text-[#111111] text-[11px] font-semibold uppercase tracking-widest px-6 py-3 rounded-full hover:bg-neutral-200 transition-all shadow-sm"
+        class="bg-[#111111] text-white text-[11px] font-semibold uppercase tracking-widest px-6 py-3 rounded-full hover:bg-neutral-800 transition-colors shadow-sm"
       >
         Prenota una consulenza
       </a>
     </div>
 
-    <!-- Mobile Menu Toggle Button -->
-    <button id="mobile-menu-btn" class="lg:hidden p-2 text-white focus:outline-none" aria-label="Apri Menu">
-      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+    <!-- Mobile Menu Toggle -->
+    <button
+      id="mobile-menu-btn"
+      class="lg:hidden p-2 text-[#111111] focus:outline-none"
+      aria-label="Apri Menu"
+    >
+      <svg
+        class="w-6 h-6"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M4 6h16M4 12h16M4 18h16"
+        />
       </svg>
     </button>
+
   </div>
 </header>
 
-<!-- MOBILE DRAWER / OVERLAY (Posizionato fuori dal tag <header> con z-[999] per evitare che venga coperto) -->
-<div id="mobile-menu" class="fixed inset-0 bg-neutral-950/70 backdrop-blur-md z-[999] hidden opacity-0 transition-opacity duration-300 text-[#111111]">
-  <div class="fixed right-0 top-0 bottom-0 w-full max-w-xs bg-white p-6 overflow-y-auto flex flex-col justify-between shadow-2xl">
+<!-- MOBILE DRAWER -->
+<div
+  id="mobile-menu"
+  class="fixed inset-0 bg-neutral-950/70 backdrop-blur-md z-[999] hidden opacity-0 transition-opacity duration-300 text-[#111111]"
+>
+  <div
+    class="fixed right-0 top-0 bottom-0 w-full max-w-xs bg-white p-6 overflow-y-auto flex flex-col justify-between shadow-2xl"
+  >
+
     <div>
+
       <div class="flex items-center justify-between pb-6 border-b border-neutral-100">
-        <span class="text-lg font-extrabold uppercase tracking-tight text-[#111111]">Menu</span>
-        <button id="close-menu-btn" class="p-2 text-neutral-500 hover:text-black focus:outline-none">
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+
+        <span class="text-lg font-extrabold uppercase tracking-tight text-[#111111]">
+          Menu
+        </span>
+
+        <button
+          id="close-menu-btn"
+          class="p-2 text-neutral-500 hover:text-black focus:outline-none"
+          aria-label="Chiudi Menu"
+        >
+          <svg
+            class="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M6 18L18 6M6 6l12 12"
+            />
           </svg>
         </button>
+
       </div>
 
       <nav class="mt-6 space-y-4 text-xs font-semibold uppercase tracking-widest">
+
         <div>
-          <a href="/trattamenti" class="block py-2 text-[#111111] font-bold border-b border-neutral-50">Tutti i Trattamenti (Hub)</a>
-          <div class="pl-3 py-2 space-y-3 font-normal capitalize text-neutral-600">
-            <a href="/trattamenti/viso" class="block">Medicina Estetica Viso</a>
-            <a href="/trattamenti/laser" class="block">Laser & Resurfacing</a>
-            <a href="/trattamenti/corpo" class="block">Body Contouring & Corpo</a>
-          </div>
+
+          
+
+          <div class="border-b border-neutral-50 pb-2">
+
+  <!-- Trigger Trattamenti -->
+  <button
+    id="mobile-treatments-btn"
+    type="button"
+    class="w-full flex items-center justify-between py-2 text-[#111111] font-bold text-left uppercase"
+    aria-expanded="false"
+  >
+    <span class="block py-2 text-[#f00] font-semibold border-b border-neutral-50">Trattamenti</span>
+
+    <svg
+      id="mobile-treatments-icon"
+      class="w-4 h-4 text-neutral-500 transition-transform duration-200"
+      fill="none"
+      stroke="currentColor"
+      viewBox="0 0 24 24"
+    >
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        d="M6 9l6 6 6-6"
+      />
+    </svg>
+  </button>
+
+  
+
+  <!-- Tutte le categorie + tutti i trattamenti -->
+  <div
+    id="mobile-treatments-submenu"
+    class="hidden pl-3 pt-2 space-y-5"
+  >
+  
+    {treatmentCategories.map((cat) => (
+      <div>
+
+        <!-- Macro categoria -->
+        <h4 class="text-[10px] font-bold text-[#111111] uppercase tracking-wider mb-2">
+          {cat.title}
+        </h4>
+
+        <!-- Singoli trattamenti -->
+        <div class="space-y-2 pl-2 border-l border-neutral-100">
+
+          {cat.items.map((item) => (
+            <a
+              href={item.href}
+              class="block text-[11px] font-normal normal-case tracking-normal text-neutral-500 hover:text-[#111111]"
+            >
+              {item.name}
+            </a>
+          ))}
+
+        </div>
+      </div>
+    ))}
+    <a
+    href="/trattamenti"
+    class="block py-2 text-[#111111] font-bold border-b border-neutral-50"
+    >
+    Vedi tutti i Trattamenti
+    </a>
+  </div>
+
+</div>
+
         </div>
 
-        <a href="/team" class="block py-2 text-[#111111] border-b border-neutral-50">Il Team</a>
-        <a href="/sedi" class="block py-2 text-[#111111] border-b border-neutral-50">Sedi</a>
-        <a href="/contatti" class="block py-2 text-[#111111] border-b border-neutral-50">Contatti</a>
+        <a
+          href="/team"
+          class="block py-2 text-[#111111] border-b border-neutral-50"
+        >
+          Il Team
+        </a>
+
+        <a
+          href="/sedi"
+          class="block py-2 text-[#111111] border-b border-neutral-50"
+        >
+          Sedi
+        </a>
+
+        <a
+          href="/contatti"
+          class="block py-2 text-[#111111] border-b border-neutral-50"
+        >
+          Contatti
+        </a>
+
       </nav>
+
     </div>
 
     <div class="pt-6 border-t border-neutral-100">
-      <a 
-        href="https://wa.me/393407699438?text=Buongiorno,%20desidero%20prenotare%20una%20consulenza." 
+
+      <a
+        href="https://wa.me/393407699438?text=Buongiorno,%20desidero%20prenotare%20una%20consulenza."
         target="_blank"
         rel="noopener noreferrer"
         class="block text-center w-full bg-[#111111] text-white text-xs font-semibold uppercase tracking-widest py-3.5 rounded-full"
       >
         Prenota una consulenza
       </a>
+
     </div>
+
   </div>
 </div>
 
 <script>
-  // Gestione Header Sticky + Cambio Stile allo Scroll
-  const header = document.getElementById('site-header');
-  const logoTitle = document.getElementById('logo-title');
-  const logoSubtitle = document.getElementById('logo-subtitle');
-  const navItems = document.querySelectorAll('.nav-item');
-  const ctaBtn = document.getElementById('cta-btn');
-  const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-
-  const updateHeader = () => {
-    if (window.scrollY > 40) {
-      header?.classList.remove('bg-transparent', 'text-white', 'border-white/10');
-      header?.classList.add('bg-white/95', 'backdrop-blur-md', 'shadow-sm', 'border-neutral-100', 'text-[#111111]');
-      
-      logoTitle?.classList.remove('text-white');
-      logoTitle?.classList.add('text-[#111111]');
-
-      logoSubtitle?.classList.remove('text-neutral-300');
-      logoSubtitle?.classList.add('text-neutral-400');
-
-      navItems.forEach(item => {
-        item.classList.remove('text-white');
-        item.classList.add('text-[#111111]');
-      });
-
-      ctaBtn?.classList.remove('bg-white', 'text-[#111111]', 'hover:bg-neutral-200');
-      ctaBtn?.classList.add('bg-[#111111]', 'text-white', 'hover:bg-neutral-800');
-
-      mobileMenuBtn?.classList.remove('text-white');
-      mobileMenuBtn?.classList.add('text-[#111111]');
-    } else {
-      header?.classList.add('bg-transparent', 'text-white', 'border-white/10');
-      header?.classList.remove('bg-white/95', 'backdrop-blur-md', 'shadow-sm', 'border-neutral-100', 'text-[#111111]');
-
-      logoTitle?.classList.add('text-white');
-      logoTitle?.classList.remove('text-[#111111]');
-
-      logoSubtitle?.classList.add('text-neutral-300');
-      logoSubtitle?.classList.remove('text-neutral-400');
-
-      navItems.forEach(item => {
-        item.classList.add('text-white');
-        item.classList.remove('text-[#111111]');
-      });
-
-      ctaBtn?.classList.add('bg-white', 'text-[#111111]', 'hover:bg-neutral-200');
-      ctaBtn?.classList.remove('bg-[#111111]', 'text-white', 'hover:bg-neutral-800');
-
-      mobileMenuBtn?.classList.add('text-white');
-      mobileMenuBtn?.classList.remove('text-[#111111]');
-    }
-  };
-
-  window.addEventListener('scroll', updateHeader);
-  updateHeader();
-
-  // Gestione Apertura/Chiusura Drawer Mobile
+  // Gestione Drawer Mobile
   const menuBtn = document.getElementById('mobile-menu-btn');
   const closeBtn = document.getElementById('close-menu-btn');
   const mobileMenu = document.getElementById('mobile-menu');
+  const mobileTreatmentsBtn = document.getElementById('mobile-treatments-btn');
+const mobileTreatmentsSubmenu = document.getElementById('mobile-treatments-submenu');
+const mobileTreatmentsIcon = document.getElementById('mobile-treatments-icon');
+
+mobileTreatmentsBtn?.addEventListener('click', () => {
+  const isOpen = !mobileTreatmentsSubmenu?.classList.contains('hidden');
+
+  if (mobileTreatmentsSubmenu) {
+    mobileTreatmentsSubmenu.classList.toggle('hidden', isOpen);
+  }
+
+  mobileTreatmentsIcon?.classList.toggle('rotate-180', !isOpen);
+  mobileTreatmentsBtn?.setAttribute('aria-expanded', String(!isOpen));
+});
+
 
   const openMenu = () => {
     if (mobileMenu) {
       mobileMenu.classList.remove('hidden');
-      document.body.style.overflow = 'hidden'; // Blocco dello scroll dello sfondo quando il menu è aperto
+      document.body.style.overflow = 'hidden';
+
       setTimeout(() => {
         mobileMenu.classList.remove('opacity-0');
       }, 10);
@@ -239,7 +387,8 @@ const treatmentCategories = [
   const closeMenu = () => {
     if (mobileMenu) {
       mobileMenu.classList.add('opacity-0');
-      document.body.style.overflow = ''; // Ripristino dello scroll
+      document.body.style.overflow = '';
+
       setTimeout(() => {
         mobileMenu.classList.add('hidden');
       }, 300);
