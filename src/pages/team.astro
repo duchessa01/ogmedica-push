@@ -3,7 +3,7 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout title="Il Team Medico">
-  <section class="py-16 px-6 max-w-7xl mx-auto">
+  <section class="mt-6 py-16 px-6 max-w-7xl mx-auto">
     <div class="max-w-3xl mb-12">
       <span class="text-xs font-semibold tracking-widest uppercase text-neutral-500">Professionalità & Rigore</span>
       <h1 class="text-4xl md:text-5xl font-bold text-[#111111] mt-2">I Nostri Specialisti</h1>
@@ -12,14 +12,17 @@ import Layout from '../layouts/Layout.astro';
       </p>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-      <div class="bg-white p-8 rounded-2xl border border-neutral-200">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+      <div class="bg-white p-8 rounded-2xl border border-neutral-200 hover:border-neutral-400 transition-all hover:shadow-sm">
         <div class="w-24 h-24 bg-neutral-200 rounded-full mb-6"></div>
-        <h3 class="text-2xl font-bold text-[#111111]">Dr. Orlando Garcia</h3>
-        <p class="text-xs text-neutral-400 uppercase tracking-wider mt-1">Direttore Sanitario & Medico Estetico</p>
+        <h3 class="text-2xl font-bold text-[#111111]">Dr.ssa Milena Castorina</h3>
+        <p class="text-xs text-neutral-400 uppercase tracking-wider mt-1">Facial Injector Specialist</p>
         <p class="text-neutral-600 font-light text-sm mt-4 leading-relaxed">
-          Specializzato in tecniche mininvasive di ringiovanimento facciale ed armonizzazione del profilo.
+          La Dott.ssa Castorina ha maturato particolare esperienza nella Medicina Estetica ricostruttiva del volto con iniettabili, partecipando a stage internazionali di Medicina Estetica Avanzata.
         </p>
+        <a href="/team/drssa-castorina" class="mt-6 text-xs font-semibold uppercase tracking-wider text-[#111111] inline-flex items-center gap-2 hover:underline">
+          Vai al CV della Dott.ssa Castorina &rarr;
+        </a> 
       </div>
     </div>
   </section>
