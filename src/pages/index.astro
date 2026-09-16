@@ -2,6 +2,10 @@
 // src/pages/index.astro
 import Layout from '../layouts/Layout.astro';
 import BeforeAfterSlider from '../components/BeforeAfterSlider.astro';
+import drssaCastorina from '../assets/drssa-castorina.jpg';
+import drMancini from '../assets/dr-mancini.jpg';
+import drssaAmico from '../assets/drssa-amico.jpg';
+import drssaRamondetta from '../assets/drssa-ramondetta.jpg';
 ---
 
 <Layout title="Home" description="Clinica di Medicina e Chirurgia Estetica, Dermatologia, Centro Laser, Epilazione e Dimagrimento a Catania e Milano">
@@ -118,12 +122,12 @@ import BeforeAfterSlider from '../components/BeforeAfterSlider.astro';
         </a>
       </div>
 
-      <!-- Laser -->
+      <!-- Corpo -->
       <div class="bg-white p-8 rounded-3xl border border-neutral-200/80 hover:border-neutral-400 transition-all hover:shadow-sm flex flex-col justify-between">
         <div>
           <h3 class="text-2xl font-bold text-[#111111] mt-2">Trattamenti corpo per adiposità e cellulite</h3>
           <p class="text-neutral-600 font-light text-sm mt-3 leading-relaxed">
-            Laser CO2 Frazionato ed epilazione medicale definitiva per rimozione macchie, cicatrici e resurfacing.
+            Mesoterapia, Radiofrequenza Medicale e protocolli integrati per adipe localizzato e tonificazione.
           </p>
         </div>
         <a href="/trattamenti/laser" class="mt-6 text-xs font-semibold uppercase tracking-wider text-[#111111] inline-flex items-center gap-2 hover:underline">
@@ -141,35 +145,202 @@ import BeforeAfterSlider from '../components/BeforeAfterSlider.astro';
     </div>
   </section>
 
-  <!-- 3. IL NOSTRO TEAM (COMPETENZA & SICUREZZA) -->
-  <section class="py-24 px-6 max-w-7xl mx-auto border-b border-neutral-100">
-    <div class="max-w-3xl mb-12">
-      <span class="text-xs font-semibold tracking-widest uppercase text-neutral-400 block">Competenza & Rigore Scientifico</span>
-      <h2 class="text-3xl md:text-4xl font-extrabold text-[#111111] mt-2">Il Nostro Team Medico</h2>
+
+
+
+
+
+  <!-- 3. IL NOSTRO TEAM (COMPETENZA & SICUREZZA) --> 
+   <section class="py-24 px-6 max-w-7xl mx-auto border-b border-neutral-100"> 
+    <!-- INTRO --> 
+     <div class="max-w-3xl mb-12"> 
+      <h2 class="text-3xl md:text-4xl font-extrabold text-[#111111] mt-2"> L'equipe di OG Medica </h2> 
       <p class="text-neutral-600 font-light mt-4 leading-relaxed text-base">
-        Un'équipe altamente qualificata guidata dall'etica professionale e dall'orientamento all'eccellenza.
+    Un team di supporto unico e competente che lavora da anni a stretto contatto con la Dr.ssa Milena Castorina per accompagnarvi in ogni fase della Medicina Estetica Avanzata.
       </p>
-    </div>
+     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-      <div class="bg-neutral-50 p-8 rounded-3xl border border-neutral-200/60 flex flex-col sm:flex-row gap-6 items-center">
-        <div class="w-28 h-28 bg-neutral-200 rounded-2xl flex-shrink-0"></div>
-        <div>
-          <h3 class="text-xl font-bold text-[#111111]">Dr. Orlando Garcia</h3>
-          <p class="text-xs text-neutral-500 uppercase tracking-widest font-semibold mt-1">Direttore Sanitario</p>
-          <p class="text-neutral-600 font-light text-xs mt-3 leading-relaxed">
-            Specializzato in medicina estetica rigenerativa e armonizzazione facciale avanzata.
-          </p>
-        </div>
-      </div>
-    </div>
 
-    <div class="mt-12 text-center">
-      <a href="/team" class="inline-flex items-center justify-center bg-neutral-100 text-[#111111] px-8 py-4 rounded-full text-xs font-semibold uppercase tracking-widest hover:bg-neutral-200 transition-all border border-neutral-200/80">
-        Scopri di più sul Team &rarr;
-      </a>
-    </div>
-  </section>
+<!-- CARDS TEAM -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+  <!-- ======================================== -->
+<!-- DR.SSA MILENA CASTORINA -->
+<!-- ======================================== -->
+
+<div
+  class="bg-neutral-50 rounded-3xl border border-neutral-200/60 overflow-hidden grid grid-cols-1 sm:grid-cols-[45%_55%] md:grid-cols-1 lg:grid-cols-[45%_55%]"
+>
+
+  <!-- Immagine -->
+  <div class="min-h-[280px] sm:min-h-[320px] lg:min-h-full">
+    <img
+      src={drssaCastorina.src}
+      alt="Dr.ssa Milena Castorina"
+      class="w-full h-full object-cover"
+    />
+  </div>
+
+  <!-- Contenuto -->
+  <div class="p-6 flex flex-col justify-center">
+
+    <h3 class="text-xl font-bold text-[#111111]">
+      Dr.ssa Milena Castorina
+    </h3>
+
+    <p class="text-xs text-neutral-500 uppercase tracking-widest font-semibold mt-2">
+      Direttrice e Facial Injector Specialist
+    </p>
+
+    <p class="text-neutral-600 font-light text-xs mt-4 leading-relaxed">
+      La Dott.ssa Milena Castorina si occupa di medicina estetica iniettiva
+      avanzata per l’abbellimento e il ringiovanimento e in particolare per
+      il rimodellamento del volto e del corpo in tutta Italia – in particolare
+      a Milano, Montecatini e Catania – utilizzando metodiche combinate poco
+      invasive e altamente efficaci.
+    </p>
+
+  </div>
+
+</div>
+
+
+<!-- ======================================== -->
+<!-- DR. GIANMARIA MANCINI -->
+<!-- ======================================== -->
+
+<div
+  class="bg-neutral-50 rounded-3xl border border-neutral-200/60 overflow-hidden grid grid-cols-1 sm:grid-cols-[45%_55%] md:grid-cols-1 lg:grid-cols-[45%_55%]"
+>
+
+  <!-- Immagine -->
+  <div class="min-h-[280px] sm:min-h-[320px] lg:min-h-full">
+    <img
+      src={drMancini.src}
+      alt="Dr. Gianmaria Mancini"
+      class="w-full h-full object-cover"
+    />
+  </div>
+
+  <!-- Contenuto -->
+  <div class="p-6 flex flex-col justify-center">
+
+    <h3 class="text-xl font-bold text-[#111111]">
+      Dr. Gianmaria Mancini
+    </h3>
+
+    <p class="text-xs text-neutral-500 uppercase tracking-widest font-semibold mt-2">
+      Master in Chirurgia Plastica
+    </p>
+
+    <p class="text-neutral-600 font-light text-xs mt-4 leading-relaxed">
+      Dr. Mancini dedica ai suoi pazienti la migliore combinazione tra
+      tempo, dedizione, cura del dettaglio. Da anni esperto nell’impiego
+      di apparecchiature medicali di ultima generazione, quali Laser Co2
+      Frazionato, Laser ad Alessandrite e Laser Nd:YAG.
+    </p>
+
+  </div>
+
+</div>
+
+
+<!-- ======================================== -->
+<!-- DR.SSA VALENTINA AMICO -->
+<!-- ======================================== -->
+
+<div
+  class="bg-neutral-50 rounded-3xl border border-neutral-200/60 overflow-hidden grid grid-cols-1 sm:grid-cols-[45%_55%] md:grid-cols-1 lg:grid-cols-[45%_55%]"
+>
+
+  <!-- Immagine -->
+  <div class="min-h-[280px] sm:min-h-[320px] lg:min-h-full">
+    <img
+      src={drssaAmico.src}
+      alt="Dr.ssa Valentina Amico"
+      class="w-full h-full object-cover"
+    />
+  </div>
+
+  <!-- Contenuto -->
+  <div class="p-6 flex flex-col justify-center">
+
+    <h3 class="text-xl font-bold text-[#111111]">
+      Dr.ssa Valentina Amico
+    </h3>
+
+    <p class="text-xs text-neutral-500 uppercase tracking-widest font-semibold mt-2">
+      Specialista in Biochimica e Chimica Clinica
+    </p>
+
+    <p class="text-neutral-600 font-light text-xs mt-4 leading-relaxed">
+      Esperta in Nutrizione Clinica, la Dott.ssa Amico formula piani
+      dietetici personalizzati per ogni fascia d’età, con l’obiettivo
+      di migliorare la salute e il benessere dell’organismo, anche in
+      presenza di patologie o disturbi del comportamento alimentare.
+    </p>
+
+  </div>
+
+</div>
+
+
+<!-- ======================================== -->
+<!-- DR.SSA ALICE RAMONDETTA -->
+<!-- ======================================== -->
+
+<div
+  class="bg-neutral-50 rounded-3xl border border-neutral-200/60 overflow-hidden grid grid-cols-1 sm:grid-cols-[45%_55%] md:grid-cols-1 lg:grid-cols-[45%_55%]"
+>
+
+  <!-- Immagine -->
+  <div class="min-h-[280px] sm:min-h-[320px] lg:min-h-full">
+    <img
+      src={drssaRamondetta.src}
+      alt="Dr.ssa Alice Ramondetta"
+      class="w-full h-full object-cover"
+    />
+  </div>
+
+  <!-- Contenuto -->
+  <div class="p-6 flex flex-col justify-center">
+
+    <h3 class="text-xl font-bold text-[#111111]">
+      Dr.ssa Alice Ramondetta
+    </h3>
+
+    <p class="text-xs text-neutral-500 uppercase tracking-widest font-semibold mt-2">
+      Dermatologa esperta nella Mappatura dei Nei e Trattamento Acne
+    </p>
+
+    <p class="text-neutral-600 font-light text-xs mt-4 leading-relaxed">
+      La Dottoressa Alice Ramondetta è esperta nella mappatura dei nei,
+      nel trattamento dell’acne e delle patologie dermatologiche
+      pediatriche, nella gestione di malattie dermatologiche autoimmuni,
+      dell’orticaria e delle malattie dermatologiche genitali e di quelle
+      sessualmente trasmesse.
+    </p>
+
+  </div>
+
+</div>
+
+</div>
+
+
+  <!-- CTA -->
+  <div class="mt-12 text-center">
+
+    <a
+      href="/team"
+      class="inline-flex items-center justify-center bg-neutral-100 text-[#111111] px-8 py-4 rounded-full text-xs font-semibold uppercase tracking-widest hover:bg-neutral-200 transition-all border border-neutral-200/80"
+    >
+      Scopri di più sul Team &rarr;
+    </a>
+
+  </div>
+
+</section>
 
   
 
