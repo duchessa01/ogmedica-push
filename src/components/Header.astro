@@ -1,43 +1,137 @@
 ---
 // src/components/Header.astro
+
+// ========================================
+// NAVIGAZIONE PRINCIPALE
+// ========================================
+
+const mainNavigation = [
+  {
+    name: 'Team',
+    mobileName: 'Il Team',
+    href: '/team'
+  },
+  {
+    name: 'Sedi',
+    mobileName: 'Sedi',
+    href: '/sedi'
+  },
+  {
+    name: 'Prima & Dopo',
+    mobileName: 'Prima & Dopo',
+    href: '/prima-e-dopo'
+  },
+  {
+    name: 'Contatti',
+    mobileName: 'Contatti',
+    href: '/contatti'
+  },
+];
+
+
+// ========================================
+// VOCE TRATTAMENTI
+// ========================================
+
+const treatmentsNavigation = {
+  name: 'Trattamenti',
+  href: '/trattamenti',
+};
+
+// ========================================
+// SOTTOCATEGORIE TRATTAMENTI
+// ========================================
+
 const treatmentCategories = [
   {
     title: 'Medicina Estetica Viso',
     items: [
-      { name: 'Filler Acido Ialuronico', href: '/trattamenti/viso#filler' },
-      { name: 'Botox / Botulino', href: '/trattamenti/viso#botox' },
-      { name: 'Biostimolazione & Polinucleotidi', href: '/trattamenti/viso#biostimolazione' },
-      { name: 'Rinofiller (Rinoplastica Non Chirurgica)', href: '/trattamenti/viso#rinofiller' },
-      { name: 'Peeling Medico Avanzato', href: '/trattamenti/viso#peeling' },
+      {
+        name: 'Filler Acido Ialuronico',
+        href: '/trattamenti/viso#filler'
+      },
+      {
+        name: 'Botox / Botulino',
+        href: '/trattamenti/viso#botox'
+      },
+      {
+        name: 'Biostimolazione & Polinucleotidi',
+        href: '/trattamenti/viso#biostimolazione'
+      },
+      {
+        name: 'Rinofiller (Rinoplastica Non Chirurgica)',
+        href: '/trattamenti/viso#rinofiller'
+      },
+      {
+        name: 'Peeling Medico Avanzato',
+        href: '/trattamenti/viso#peeling'
+      },
     ]
   },
+
   {
     title: 'Rimozione Inestetismi & Laser',
     items: [
-      { name: 'Laser CO2 Frazionato (Resurfacing)', href: '/trattamenti/laser#co2' },
-      { name: 'Epilazione Medicale Definitiva', href: '/trattamenti/laser#epilazione' },
-      { name: 'Rimozione Macchie & Pigmentazioni', href: '/trattamenti/laser#macchie' },
-      { name: 'Trattamento Cicatrici Acneiche', href: '/trattamenti/laser#acne' },
+      {
+        name: 'Laser CO2 Frazionato (Resurfacing)',
+        href: '/trattamenti/laser#co2'
+      },
+      {
+        name: 'Epilazione Medicale Definitiva',
+        href: '/trattamenti/laser#epilazione'
+      },
+      {
+        name: 'Rimozione Macchie & Pigmentazioni',
+        href: '/trattamenti/laser#macchie'
+      },
+      {
+        name: 'Trattamento Cicatrici Acneiche',
+        href: '/trattamenti/laser#acne'
+      },
     ]
   },
+
   {
     title: 'Corpo & Body Contouring',
     items: [
-      { name: 'Mesoterapia Anti-Cellulite', href: '/trattamenti/corpo#mesoterapia' },
-      { name: 'Radiofrequenza Medicale Corpo', href: '/trattamenti/corpo#radiofrequenza' },
-      { name: 'Adipocitoclasia / Adipe Localizzato', href: '/trattamenti/corpo#adipe' },
-      { name: 'Tonificazione Muscolare Intensa', href: '/trattamenti/corpo#tonificazione' },
+      {
+        name: 'Mesoterapia Anti-Cellulite',
+        href: '/trattamenti/corpo#mesoterapia'
+      },
+      {
+        name: 'Radiofrequenza Medicale Corpo',
+        href: '/trattamenti/corpo#radiofrequenza'
+      },
+      {
+        name: 'Adipocitoclasia / Adipe Localizzato',
+        href: '/trattamenti/corpo#adipe'
+      },
+      {
+        name: 'Tonificazione Muscolare Intensa',
+        href: '/trattamenti/corpo#tonificazione'
+      },
     ]
   },
+
   {
     title: 'Chirurgia & Rigenerativa',
     items: [
-      { name: 'Medicina Rigenerativa (PRP)', href: '/trattamenti/viso#rigenerativa' },
-      { name: 'Consulenza Chirurgia Plastica', href: '/contatti' },
-      { name: 'Check-up Cutaneo Diagnostico', href: '/contatti' },
+      {
+        name: 'Medicina Rigenerativa (PRP)',
+        href: '/trattamenti/viso#rigenerativa'
+      },
+      {
+        name: 'Consulenza Chirurgia Plastica',
+        href: '/contatti'
+      },
+      {
+        name: 'Check-up Cutaneo Diagnostico',
+        href: '/contatti'
+      },
     ]
   }
 ];
+
 ---
 
 <header
@@ -65,30 +159,32 @@ const treatmentCategories = [
 
     <!-- Navigation Desktop -->
     <nav class="hidden lg:flex items-center space-x-8 text-xs font-semibold uppercase tracking-widest">
+      
 
       <!-- MEGA MENU DROPDOWN -->
       <div class="group py-7">
 
         <a
-          href="/trattamenti"
-          class="relative nav-item flex items-center gap-1 text-[#111111] hover:opacity-60 focus:outline-none uppercase tracking-widest font-semibold"
-        >
-          Trattamenti
+  href={treatmentsNavigation.href}
+  class="relative nav-item flex items-center gap-1 text-[#111111] hover:opacity-60 focus:outline-none uppercase tracking-widest font-semibold cursor-pointer"
+>
+  {treatmentsNavigation.name}
 
-          <svg
-            class="w-3.5 h-3.5 text-neutral-500 group-hover:rotate-180 transition-transform duration-200"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M19 9l-7 7-7-7"
-            />
-          </svg>
-        </a>
+  <svg
+    class="w-3.5 h-3.5 text-neutral-500 group-hover:rotate-180 transition-transform duration-200"
+    fill="none"
+    stroke="currentColor"
+    viewBox="0 0 24 24"
+  >
+    <path
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      d="M19 9l-7 7-7-7"
+    />
+  </svg>
+</a>
+
 
         <!-- Dropdown Panel -->
         <div
@@ -135,41 +231,22 @@ const treatmentCategories = [
 
         </div>
       </div>
-
-      <a
-        href="/team"
-        class="nav-item text-[#111111] hover:opacity-60 py-2"
-      >
-        Team
-      </a>
-
-      <a
-        href="/sedi"
-        class="nav-item text-[#111111] hover:opacity-60 py-2"
-      >
-        Sedi
-      </a>
-
-      <a
-        href="/prima-e-dopo"
-        class="nav-item text-[#111111] hover:opacity-60 py-2"
-      >
-        Prima & Dopo
-      </a>
-
-      <a
-        href="/contatti"
-        class="nav-item text-[#111111] hover:opacity-60 py-2"
-      >
-        Contatti
-      </a>
+      
+      {mainNavigation.map((item) => (
+  <a
+    href={item.href}
+    class="nav-item text-[#111111] hover:opacity-60 py-2"
+  >
+    {item.name}
+  </a>
+))}
 
     </nav>
 
     <!-- Right Header CTA -->
     <div class="hidden sm:flex items-center space-x-4">
       <a
-        href="https://wa.me/393407699438?text=Buongiorno,%20desidero%20prenotare%20una%20consulenza."
+        href="/contatti"
         target="_blank"
         rel="noopener noreferrer"
         id="cta-btn"
@@ -250,30 +327,32 @@ const treatmentCategories = [
 
           <div class="border-b border-neutral-50 pb-2">
 
-  <!-- Trigger Trattamenti -->
   <button
-    id="mobile-treatments-btn"
-    type="button"
-    class="w-full flex items-center justify-between py-2 text-[#111111] font-bold text-left uppercase"
-    aria-expanded="false"
-  >
-    <span class="block py-2 text-[#f00] font-semibold border-b border-neutral-50">Trattamenti</span>
+  id="mobile-treatments-btn"
+  type="button"
+  class="w-full flex items-center justify-between py-2 text-[#111111] font-bold text-left uppercase cursor-pointer"
+  aria-expanded="false"
+>
+  <span class="block py-2 text-[#111111] font-semibold border-b border-neutral-50">
+    {treatmentsNavigation.name}
+  </span>
 
-    <svg
-      id="mobile-treatments-icon"
-      class="w-4 h-4 text-neutral-500 transition-transform duration-200"
-      fill="none"
-      stroke="currentColor"
-      viewBox="0 0 24 24"
-    >
-      <path
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        stroke-width="2"
-        d="M6 9l6 6 6-6"
-      />
-    </svg>
-  </button>
+  <svg
+    id="mobile-treatments-icon"
+    class="w-4 h-4 text-neutral-500 transition-transform duration-200"
+    fill="none"
+    stroke="currentColor"
+    viewBox="0 0 24 24"
+  >
+    <path
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      d="M6 9l6 6 6-6"
+    />
+  </svg>
+</button>
+
 
   
 
@@ -307,37 +386,26 @@ const treatmentCategories = [
       </div>
     ))}
     <a
-    href="/trattamenti"
-    class="block py-2 text-[#111111] font-bold border-b border-neutral-50"
-    >
-    Vedi tutti i Trattamenti
-    </a>
+  href={treatmentsNavigation.href}
+  class="block py-2 text-[#111111] font-bold border-b border-neutral-50 cursor-pointer"
+>
+  Vedi tutti i Trattamenti
+</a>
+
   </div>
 
 </div>
 
         </div>
 
-        <a
-          href="/team"
-          class="block py-2 text-[#111111] border-b border-neutral-50"
-        >
-          Il Team
-        </a>
-
-        <a
-          href="/sedi"
-          class="block py-2 text-[#111111] border-b border-neutral-50"
-        >
-          Sedi
-        </a>
-
-        <a
-          href="/contatti"
-          class="block py-2 text-[#111111] border-b border-neutral-50"
-        >
-          Contatti
-        </a>
+        {mainNavigation.map((item) => (
+  <a
+    href={item.href}
+    class="block py-2 text-[#111111] border-b border-neutral-50"
+  >
+    {item.name}
+  </a>
+))}
 
       </nav>
 
@@ -346,13 +414,15 @@ const treatmentCategories = [
     <div class="pt-6 border-t border-neutral-100">
 
       <a
-        href="https://wa.me/393407699438?text=Buongiorno,%20desidero%20prenotare%20una%20consulenza."
-        target="_blank"
-        rel="noopener noreferrer"
-        class="block text-center w-full bg-[#111111] text-white text-xs font-semibold uppercase tracking-widest py-3.5 rounded-full"
-      >
-        Prenota una consulenza
-      </a>
+  href="/contatti"
+  target="_blank"
+  rel="noopener noreferrer"
+  id="cta-btn"
+  class="bg-[#111111] text-white text-[11px] font-semibold uppercase tracking-widest px-6 py-3 rounded-full hover:bg-neutral-800 transition-colors shadow-sm cursor-pointer"
+>
+  Prenota una consulenza
+</a>
+
 
     </div>
 
