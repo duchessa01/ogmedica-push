@@ -13,7 +13,6 @@ const sedi = [
     orari: [
       { giorni: 'Lunedì, Mercoledì e Venerdì', ore: '14:00 alle 19:30' },
     ],
-    immagine: 'https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&q=80&w=1200',
     // URL di incorporamento Google Maps (embed)
     mapEmbedUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3165.151740924192!2d15.0838!3d37.5199!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x131419325983796d%3A0x1d0f5028445df9e0!2sVia%20Gustavo%20Vagliasindi%2C%2052%2C%2095126%20Catania%20CT!5e0!3m2!1sit!2sit!4v1650000000000!5m2!1sit!2sit',
     gmapsLink: 'https://maps.google.com/?q=Via+Gustavo+Vagliasindi+52+Catania'
@@ -73,7 +72,7 @@ const sedi = [
           <!-- 1. IMMAGINE DELLA CLINICA -->
           <div class="relative h-64 sm:h-72 w-full">
             <img 
-              src={sede.immagine} 
+              src= "../assets/'../assets/sede-catania.png';"
               alt={`Clinica OG Medica ${sede.città}`} 
               class="w-full h-full object-cover"
             />

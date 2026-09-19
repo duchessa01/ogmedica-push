@@ -136,7 +136,7 @@ const treatmentCategories = [
 
 <header
   id="site-header"
-  class="fixed top-0 left-0 right-0 z-40 bg-white text-[#111111] border-b border-neutral-400"
+  class="fixed top-0 left-0 right-0 z-40 bg-white text-[#111111] border-b border-neutral-200"
 >
   <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
 
@@ -252,7 +252,7 @@ const treatmentCategories = [
         id="cta-btn"
         class="bg-[#111111] text-white text-[11px] font-semibold uppercase tracking-widest px-6 py-3 rounded-full hover:bg-neutral-800 transition-colors shadow-sm"
       >
-        Prenota una consulenza
+        Prenota una visita
       </a>
     </div>
 
@@ -293,7 +293,7 @@ const treatmentCategories = [
 
       <div class="flex items-center justify-between pb-6 border-b border-neutral-100">
 
-        <span class="text-lg font-extrabold uppercase tracking-tight text-[#111111]">
+        <span class="text-lg font-bold uppercase tracking-tight text-[#111111]">
           Menu
         </span>
 
@@ -319,7 +319,7 @@ const treatmentCategories = [
 
       </div>
 
-      <nav class="mt-6 space-y-2 text-xs font-semibold uppercase tracking-widest">
+      <nav class="mt-6 space-y-2 font-semibold uppercase tracking-widest">
 
         <div>
 
@@ -333,7 +333,8 @@ const treatmentCategories = [
   class="w-full flex items-center justify-between text-[#111111] font-bold text-left uppercase cursor-pointer"
   aria-expanded="false"
 >
-  <span class="block py-2 text-[#111111] font-semibold border-b border-neutral-50">
+<!-- MENU "TRATTAMENTI" MOBILE -->
+  <span class="block py-2 text-[#111111] font-semibold border-b border-neutral-100">
     {treatmentsNavigation.name}
   </span>
 
@@ -366,7 +367,7 @@ const treatmentCategories = [
       <div>
 
         <!-- Macro categoria -->
-        <h4 class="text-[10px] font-bold text-[#111111] uppercase tracking-wider mb-2">
+        <h4 class="text-[12px] font-bold text-[#111111] uppercase tracking-wider mb-2">
           {cat.title}
         </h4>
 
@@ -386,11 +387,11 @@ const treatmentCategories = [
       </div>
     ))}
     <a
-  href={treatmentsNavigation.href}
-  class="block py-2 text-[#111111] font-bold border-b border-neutral-50 cursor-pointer"
->
-  Vedi tutti i Trattamenti
-</a>
+    href={treatmentsNavigation.href}
+    class="block py-2 text-[#111111] text-xs font-bold border-b border-neutral-50 cursor-pointer"
+    >
+    Tutti i Trattamenti
+    </a>
 
   </div>
 
@@ -401,28 +402,13 @@ const treatmentCategories = [
         {mainNavigation.map((item) => (
   <a
     href={item.href}
-    class="block py-2 text-[#111111] border-b border-neutral-50"
+    class="block py-2 text-[#111111] border-b border-neutral-100"
   >
     {item.name}
   </a>
 ))}
 
       </nav>
-
-    </div>
-
-    <div class="pt-6 border-t border-neutral-100">
-
-      <a
-  href="/contatti"
-  target="_blank"
-  rel="noopener noreferrer"
-  id="cta-btn"
-  class="bg-[#111111] text-white text-[11px] font-semibold uppercase tracking-widest px-6 py-3 rounded-full hover:bg-neutral-800 transition-colors shadow-sm cursor-pointer"
->
-  Prenota una consulenza
-</a>
-
 
     </div>
 
