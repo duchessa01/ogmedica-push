@@ -1,0 +1,42 @@
+name: Deploy to GitHub Pages
+
+on:
+  # Attiva il workflow ogni volta che fai il push del ramo `main`
+  # Usi un nome di ramo differente? Sostituisci `main` con il nome del tuo ramo
+  push:
+    branches: [ main ]
+  # Ti permette di eseguire questo workflow manualmente dalle Actions tab su GitHub.
+  workflow_dispatch:
+
+# Permette a questo lavoro di clonare il repo e creare una distribuzione della pagina
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout your repository using git
+        uses: actions/checkout@v7
+      - name: Install, build, and upload your site
+        uses: withastro/action@v6
+        # with:
+          # path: . # La posizione principale del tuo progetto Astro nel repository. (opzionale)
+          # node-version: 24 # La versione specifica di Node che dovrebbe essere usata per compilare il tuo sito. Di default è 24. (opzionale)
+          # package-manager: pnpm@latest # Il gestore di pacchetti che dovrebbe essere usato per installare le dipendenze e compilare il tuo sito. Rilevato automaticamente in base al tuo lockfile. (opzionale)
+          # build-cmd: pnpm run build # Il comando da eseguire per compilare il tuo sito. Di default esegue lo script/task di compilazione del package. (opzionale)
+        # env:
+          # PUBLIC_POKEAPI: 'https://pokeapi.co/api/v2' # Usa le virgolette singole per il valore della variabile. (opzionale)
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v5
